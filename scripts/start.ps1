@@ -16,7 +16,7 @@ if ($NoBrowser -eq $false) {
 } 
 if ($config.sync) {
     Start-Job -ScriptBlock {
-        & powershell.exe ./scripts/sync.ps1
+        & powershell.exe ./scripts/sync-interval.ps1
     } | Out-Null
 }
 & $npx_executable tiddlywiki $wiki_path --listen
