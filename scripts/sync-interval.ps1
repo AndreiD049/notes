@@ -1,4 +1,4 @@
-param ($Interval,$Name,$Branch)
+param ($Interval=10,$Name,$Branch)
 
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
