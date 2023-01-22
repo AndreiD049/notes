@@ -13,7 +13,7 @@ catch {
 if ($git_installed) {
     do {
         powershell -File ./scripts/sync.ps1 -Name $Name -Branch $Branch
-        Start-Sleep -Seconds $Interval
+        Start-Sleep -Seconds $Interval * 60
     } until ($infinity)
 } else {
     Write-Error "Git not installed";
