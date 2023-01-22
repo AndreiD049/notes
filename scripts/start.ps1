@@ -20,7 +20,7 @@ if ($config.sync) {
     Start-Job -ScriptBlock {
         param ($Script,$Name,$Branch)
 
-        powershell.exe -File $Script -Name $Name -Branch $Branch;
-    } -Arg $sync_script, $config.remoteName, $config.remoteBranch
+        powershell.exe -File $using:$sync_script -Name $Name -Branch $Branch;
+    }
 }
 & $npx_executable tiddlywiki $wiki_path --listen port=$Port
