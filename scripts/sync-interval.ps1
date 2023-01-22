@@ -1,8 +1,6 @@
 param ($Interval=10,$Name,$Branch)
 
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
-$log_file = "./sync-log.txt";
-Add-Content $log_file "test"
 
 try {
     & git.exe --version | Out-Null;
