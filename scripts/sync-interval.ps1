@@ -12,9 +12,9 @@ catch {
 
 if ($git_installed) {
     do {
-        Start-Sleep -Seconds 100
         Write-Output "Start-sleep"
         & powershell -File ./scripts/sync.ps1
+        Start-Sleep -Seconds 100
     } until ($infinity)
 } else {
     Write-Error "Git not installed";
