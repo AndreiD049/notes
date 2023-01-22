@@ -16,7 +16,6 @@ if ($NoBrowser -eq $false) {
 } 
 if ($config.sync) {
     $sync_job = Start-Job -ScriptBlock {
-        Write-Output $PWD
         & powershell.exe -File "./scripts/sync-interval.ps1"
     } -InitializationScript { Set-Location "D:\Development\js\npm\tiddlywiki-cmd" }
 }
