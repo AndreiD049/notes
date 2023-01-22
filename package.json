@@ -1,0 +1,14 @@
+{
+  "name": "tiddlywiki-cmd",
+  "version": "1.0.0",
+  "description": "Command line launcher and syncing of tiddlywiki",
+  "main": "index.js",
+  "scripts": {
+    "start": "powershell -File ./scripts/start.ps1"
+  },
+  "author": "Andrei Dimitrascu",
+  "license": "MIT",
+  "dependencies": {
+    "tiddlywiki": "^5.2.5"
+  }
+}
