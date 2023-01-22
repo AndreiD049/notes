@@ -1,5 +1,4 @@
-param ($Interval=10,$Name,$Branch)
-
+$config = Get-Content ".wikirc.json" | ConvertFrom-Json
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
 try {
