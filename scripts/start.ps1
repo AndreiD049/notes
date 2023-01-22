@@ -9,7 +9,7 @@ if (-not (Test-Path $wiki_path)) {
     & $npx_executable tiddlywiki $wiki_path --init server
 }
 
-& powershell.exe -File ./scripts/sync.ps1
+# & powershell.exe -File ./scripts/sync.ps1
 
 if ($NoBrowser -eq $false) {
     Start-Process "http://127.0.0.1:8080"
