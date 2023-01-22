@@ -18,8 +18,6 @@ if ($NoBrowser -eq $false) {
 } 
 if ($config.sync) {
     Start-Job -ScriptBlock {
-        param ($Script,$Name,$Branch)
-
         powershell.exe -File $using:sync_script -Name $using:config.remoteName -Branch $using:config.remoteBranch;
     }
 }
