@@ -20,4 +20,5 @@ if ($config.sync) {
     } -InitializationScript { Set-Location "D:\Development\js\npm\tiddlywiki-cmd" }
 }
 & $npx_executable tiddlywiki $wiki_path --listen
+Write-Output "remove"
 $sync_job | Receive-Job -Wait -AutoRemoveJob
