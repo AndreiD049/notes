@@ -12,8 +12,8 @@ catch {
 
 if ($git_installed) {
     do {
+        Start-Sleep -Seconds 10
         & powershell -File ./scripts/sync.ps1
-        Start-Sleep -Seconds ($interval)
     } until ($infinity)
 } else {
     Write-Error "Git not installed";
