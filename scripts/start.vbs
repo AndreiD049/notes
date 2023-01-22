@@ -1,2 +1,4 @@
 Set objShell = CreateObject("Wscript.shell")
-objShell.run("powershell -noexit -file ./start.ps1")
+scriptdir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
+MsgBox scriptdir
+objShell.run("powershell -noexit -file " & scriptdir & "/start.ps1 -windowstyle hidden")
