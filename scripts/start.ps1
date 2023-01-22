@@ -19,6 +19,5 @@ if ($config.sync) {
         & powershell.exe -File "./scripts/sync-interval.ps1"
     } -InitializationScript { Set-Location "D:\Development\js\npm\tiddlywiki-cmd" }
 }
-$server = Start-Job -ScriptBlock { & $npx_executable tiddlywiki $wiki_path --listen }
-$server | Receive-Job -Wait -AutoRemoveJob
+& $npx_executable tiddlywiki $wiki_path --listen
 $sync_job | Receive-Job -Wait -AutoRemoveJob
