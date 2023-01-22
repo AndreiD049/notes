@@ -11,6 +11,7 @@ $status = git.exe status;
 Add-Content $log_file "Synchronizing: $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
 if (-not ($status -match "nothing to commit")) { 
     & $npx_executable tiddlywiki ./data/Default --build index
+    Copy-Item ./data/Default/index.html -Destination ./docs/
     Add-Content $log_file $status;
     $commit_message = "Wiki sync. $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")";
     $added = git.exe add .;
