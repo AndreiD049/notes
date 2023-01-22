@@ -16,6 +16,9 @@ if (-not (Test-Path $wiki_path)) {
 if ($NoBrowser -eq $false) {
     Start-Process "http://127.0.0.1:$Port"
 } 
+
+Write-Output $config.syncInterval
+
 if ($config.sync) {
     Start-Job -ScriptBlock {
         powershell.exe -File $using:sync_script -Interval $using:config.syncInterval -Name $using:config.remoteName -Branch $using:config.remoteBranch;
