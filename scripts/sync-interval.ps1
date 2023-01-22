@@ -1,4 +1,4 @@
-param ($Interval=10)
+param ($Interval=10,$Name,$Branch)
 
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
@@ -12,8 +12,8 @@ catch {
 
 if ($git_installed) {
     do {
-        powershell -File ./scripts/sync.ps1
-        Start-Sleep -Seconds 10
+        powershell -File ./scripts/sync.ps1 -Name $Name -Branch $Branch
+        Start-Sleep -Seconds $Interval * 60
     } until ($infinity)
 } else {
     Write-Error "Git not installed";
