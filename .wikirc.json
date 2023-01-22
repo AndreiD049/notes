@@ -1,7 +1,7 @@
 {
     "wikiname": "Default",
     "sync": true,
-    "syncInterval": 15,
+    "syncInterval": 1,
     "remoteName": "origin",
     "remoteBranch": "main",
     "remoteUrl": "git@github.com:AndreiD049/notes.git"

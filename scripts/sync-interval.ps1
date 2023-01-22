@@ -1,5 +1,5 @@
-$config = Get-Content ".wikirc.json" | ConvertFrom-Json
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
+$config = Get-Content ".wikirc.json" | ConvertFrom-Json
 
 try {
     & git.exe --version | Out-Null;
