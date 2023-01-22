@@ -10,7 +10,8 @@ Add-Content $log_file "Synchronizing: $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
 if (-not ($status -match "nothing to commit")) { 
     Add-Content $log_file $status
     $commit_message = "Wiki sync. $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
-    & git.exe add . | Add-Content -Path $log_file
+    $added = git.exe add .
+    Add-Content -Path $log_file $added
     & git.exe commit -m $commit_message | Add-Content $log_file
 } else {
     Write-Output "Nothing to commit";
