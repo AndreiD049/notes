@@ -1,6 +1,6 @@
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
-$log_file = "./synclog.txt"
+$log_file = "./sync-log.txt"
 if (-not (Test-Path $log_file)) {
     New-Item $log_file
 }
