@@ -8,7 +8,7 @@ if (-not (Test-Path $log_file)) {
 $status = git.exe status
 Add-Content $log_file "Synchronizing: $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
 if (-not ($status -match "nothing to commit")) { 
-    $status | Add-Content $log_file
+    Add-Content $log_file $status
     $commit_message = "Wiki sync. $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
     & git.exe add . | Add-Content $log_file
     & git.exe commit -m $commit_message | Add-Content $log_file
