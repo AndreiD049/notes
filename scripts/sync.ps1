@@ -15,5 +15,5 @@ if (-not ($status -match "nothing to commit")) {
     $commit = git.exe commit -m $commit_message 
     Add-Content -Path $log_file $commit
 } else {
-    Add-Content "Nothing to commit";
+    Add-Content $log_file "Nothing to commit";
 }
