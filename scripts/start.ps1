@@ -15,9 +15,11 @@ if ($NoBrowser -eq $false) {
     Start-Process "http://127.0.0.1:8080"
 } 
 if ($config.sync) {
-    Start-Job -ScriptBlock {
+    $sync_job = Start-Job -ScriptBlock {
         Write-Output $PWD
         & powershell.exe -File "./scripts/sync-interval.ps1"
     } -InitializationScript { Set-Location "D:\Development\js\npm\tiddlywiki-cmd" }
 }
-& $npx_executable tiddlywiki $wiki_path --listen
+$server = Start-Job -ScriptBlock { & $npx_executable tiddlywiki $wiki_path --listen }
+$server | Receive-Job -Wait -AutoRemoveJob
+$sync_job | Receive-Job -Wait -AutoRemoveJob
