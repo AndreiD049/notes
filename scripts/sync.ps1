@@ -1,7 +1,11 @@
 Set-Location (Get-Item $PSScriptRoot).Parent.FullName
 
-$status = git.exe status
 $log_file = "./synclog.txt"
+if (-not (Test-Path $log_file)) {
+    New-Item $log_file
+}
+
+$status = git.exe status
 Add-Content $log_file "Synchronizing: $(Get-Date -Format "yyyy-MM-ddThh:mm:ss")"
 if (-not ($status -match "nothing to commit")) { 
     $status | Add-Content $log_file
