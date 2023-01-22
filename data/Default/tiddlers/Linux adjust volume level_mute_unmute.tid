@@ -1,0 +1,18 @@
+created: 20221218152413173
+modified: 20221218152624771
+tags: Linux Recipe
+title: Linux adjust volume level/mute/unmute
+type: text/vnd.tiddlywiki
+
+Source material - [[stackexchange|https://unix.stackexchange.com/questions/21089/how-to-use-command-line-to-change-volume]]
+
+You can use `amixer`. It's in the `alsa-utils` package on Ubuntu and Debian.
+
+```
+amixer set Master 50%
+amixer set Master 10%+
+amixer set Master 10%-
+amixer set Master mute
+amixer set Master unmute
+amixer set Master toggle
+```

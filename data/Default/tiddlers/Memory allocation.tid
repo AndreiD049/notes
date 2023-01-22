@@ -1,0 +1,30 @@
+created: 20220110182302357
+creator: AndreiD049
+modified: 20220724161636031
+modifier: AndreiD049
+tags: Rust transferred
+title: Memory allocation
+type: text/vnd.tiddlywiki
+
+!!! When memory is allocated?
+
+In [[Rust]], memory is allocated from the moment a variable is created.
+
+!!! When memory is deallocated?
+
+Memory is deallocated when the variable that owns the memory (see [[Ownership rules]]) goes out of scope
+
+!!! Example:
+
+```rust
+fn main() {
+    {
+        let s = String::from("hello"); // s is valid from this point forward
+
+        // do stuff with s
+    }                                  // this scope is now over, and s is no
+                                       // longer valid
+}
+```
+
+For [[scalar data types|Rust data types]], variable sizes are known at compile time, so they are stored entirely on the stack. In this case, memory is allocated when a new stackframe is created, and deallocated when the stack frame is popped.

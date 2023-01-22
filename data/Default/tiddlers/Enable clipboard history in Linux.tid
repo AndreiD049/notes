@@ -1,0 +1,27 @@
+created: 20221224093157403
+modified: 20221224094348713
+tags: Linux Recipe i3
+title: Enable clipboard history in Linux
+type: text/vnd.tiddlywiki
+
+!! Install `greenclip`
+
+# Install [[greenclip|https://github.com/erebe/greenclip]]:
+## wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip
+## add execution permissions `chmod +x greenclip`
+## move the file to `$PATH`: `cp greenclip /usr/bin/`
+
+!! Install `rofi`
+
+# Install [[rofi|https://github.com/davatorium/rofi]] (greenclip dependenci). On Fedora - `sudo dnf install rofi`
+
+!! Bind keyboard using `i3wm`
+
+In your `~/.config/i3/config` file add:
+
+```sh
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+```
+
+For other window managers, google a way to bind the command to a key and automatically start the daemon

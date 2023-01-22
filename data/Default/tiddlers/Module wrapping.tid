@@ -1,0 +1,23 @@
+created: 20220103203854017
+creator: AndreiD049
+modified: 20220723191249440
+modifier: AndreiD049
+tags: Javascript transferred
+title: Module wrapping
+type: text/vnd.tiddlywiki
+
+Before a [[commonjs module|Common js modules]] is executed, it's contents are wrapped in a function.
+It looks approximatively like this:
+
+```js
+(function(exports, require, module, __filename, __dirname) {
+ /* Module contents */
+});
+```
+
+This helps encapsulation, and provides useful local variables:
+
+* `exports`: alias for `module.exports`
+* `require`: function for requiring other modules. Require returns the [[common js|Common js modules]] module's `exports` object.
+* `module`: reference to the current module
+* `__filename` and `__dirname`: representing current filename and directory name

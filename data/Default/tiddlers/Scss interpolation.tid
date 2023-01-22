@@ -1,0 +1,20 @@
+created: 20220102173523557
+creator: AndreiD049
+modified: 20220102173808812
+modifier: AndreiD049
+tags: Scss
+title: Scss interpolation
+type: text/vnd.tiddlywiki
+
+Interpolation let's you use any result from a css expression or variable, by wrapping it in `#{}`
+
+```scss
+@mixin define-emoji($name, $glyph) {
+  span.emoji-#{$name} { // here is the interpolation
+    font-family: IconFont;
+    font-variant: normal;
+    font-weight: normal;
+    content: $glyph;
+  }
+}
+```

@@ -1,0 +1,12 @@
+created: 20220103202121570
+creator: AndreiD049
+modified: 20220724144127898
+modifier: AndreiD049
+tags: Linux Recipe transferred
+title: How to open file manager from terminal
+type: text/vnd.tiddlywiki
+
+# Navigate to the folder you need
+# type `xdg-open .` to open current folder or `xsg-open filename` to open file
+
+> //It's the same as `start` command in Windows//

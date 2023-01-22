@@ -1,0 +1,11 @@
+created: 20220102115950121
+creator: AndreiD049
+modified: 20220724170710279
+modifier: AndreiD049
+tags: Javascript transferred
+title: Typescript
+type: text/vnd.tiddlywiki
+
+Typescript is a transpiler to javascript. It transforms javascript into a statically typed language (see [[https://en.wikipedia.org/wiki/Type_system]]), which makes development easier, but at the same time more cumbersome.
+
+<<toc-selective-expandable "Typescript" >>

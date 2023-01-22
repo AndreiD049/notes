@@ -1,0 +1,29 @@
+created: 20220312105651071
+modified: 20220724171043852
+tags: transferred
+title: Sharepoint Tasks MVP Steps
+type: text/vnd.tiddlywiki
+
+! MVP Steps
+
+"""
+<$checkbox tiddler="MVPSteps" index="2" checked="selected" unchecked="" default=""> Create repository, add spfx-fast-serve (see [[Sharepoint Framework]])</$checkbox>
+<$checkbox tiddler="MVPSteps" index="3" checked="selected" unchecked="" default=""> Create property pane controls to create the list as it needs to be</$checkbox>
+<$checkbox tiddler="MVPSteps" index="4" checked="selected" unchecked="" default=""> Create UI draft for a task</$checkbox>
+<$checkbox tiddler="MVPSteps" index="5" checked="selected" unchecked="" default=""> Add api calls and services</$checkbox>
+<$checkbox tiddler="MVPSteps" index="6" checked="selected" unchecked="" default=""> Pull the current day's task logs from list (current User)</$checkbox>
+<$checkbox tiddler="MVPSteps" index="7" checked="selected" unchecked="" default=""> Pull the current day's tasks from list (current User)</$checkbox>
+<$checkbox tiddler="MVPSteps" index="8" checked="selected" unchecked="" default=""> Match tasks and task logs and create additional logs if needed</$checkbox>
+<$checkbox tiddler="MVPSteps" index="9" checked="selected" unchecked="" default=""> Add possibility to change dates using a callendar or arrows</$checkbox>
+<$checkbox tiddler="MVPSteps" index="10" checked="selected" unchecked="" default=""> If date not today, do not create logs, pull only tasks</$checkbox>
+<$checkbox tiddler="MVPSteps" index="11" checked="selected" unchecked="" default=""> When modifying a task which doesn't have a log, create the log first and then modify it</$checkbox>
+<$checkbox tiddler="MVPSteps" index="12" checked="selected" unchecked="" default=""> Sort by time by default</$checkbox>
+<$checkbox tiddler="MVPSteps" index="13" checked="selected" unchecked="" default=""> Add possibility for the user to leave a remark</$checkbox>
+<$checkbox tiddler="MVPSteps" index="14" checked="selected" unchecked="" default=""> Add possiblity for custom sorting</$checkbox>
+<$checkbox tiddler="MVPSteps" index="15" checked="selected" unchecked="" default=""> Adjust the width of the date picked (maybe place it in a Command Bar component). Currently it doesn't look good on mobile or in a single narrow column</$checkbox>
+<$checkbox tiddler="MVPSteps" index="16" checked="selected" unchecked="" default=""> Add styles for tasks that are expired. (Red bold text)</$checkbox>
+<$checkbox tiddler="MVPSteps" index="17" checked="selected" unchecked="" default=""> Adjust property pane `Max users to select`. Add value 0. When value is 0, people picked is not displayed</$checkbox>
+<$checkbox tiddler="MVPSteps" index="18" checked="selected" unchecked="" default=""> Add support for monthly tasks</$checkbox>
+<$checkbox tiddler="MVPSteps" index="19" checked="selected" unchecked="" default=""> When there are no tasks for a person. Show text like "No tasks for this date..."</$checkbox>
+<$checkbox tiddler="MVPSteps" index="20" checked="selected" unchecked="" default=""> Add new column on tasks and task logs - `Transferable` (`boolean`). When task is transferable, it should be shown every day until it's finished/canceled</$checkbox>
+"""

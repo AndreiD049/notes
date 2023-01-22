@@ -1,0 +1,16 @@
+created: 20220103202009409
+creator: AndreiD049
+modified: 20220724141523410
+modifier: AndreiD049
+tags: Linux Recipe transferred
+title: Extract files from archive in Linux
+type: text/vnd.tiddlywiki
+
+`tar xvzf file.tar.gz`
+
+Where:
+
+# `x` stands for `extract`
+# `v` stands for `verbose`
+# `z` stands for `gzip`
+# `f` stands for `file`

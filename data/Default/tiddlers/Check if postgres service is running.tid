@@ -1,0 +1,15 @@
+created: 20220102113745044
+creator: AndreiD049
+modified: 20220723182406692
+modifier: AndreiD049
+tags: Postgres transferred
+title: Check if postgres service is running
+type: text/vnd.tiddlywiki
+
+To check if the service is running on Linux:
+
+`sudo service postgresql status`
+
+To start the service if it's not running:
+
+`sudo service postgresql start`

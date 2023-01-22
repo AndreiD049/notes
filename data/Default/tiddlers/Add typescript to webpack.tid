@@ -1,0 +1,37 @@
+created: 20220102120555257
+creator: AndreiD049
+modified: 20220723154648223
+modifier: AndreiD049
+tags: Typescript transferred
+title: Add typescript to webpack
+type: text/vnd.tiddlywiki
+
+# Install `ts-loader`
+# Add a rule to your `webpack.config.js`
+
+```ts
+rules: [
+	{
+		test: /.tsx?$/,
+		use: [
+			{
+				loader: 'ts-loader', options: { transpileOnly: true }
+			}
+		]
+	}
+]
+```
+
+You might want to add this to your `webpack.config.js` as well:
+
+```js
+module.exports {
+	// ...
+	entry: //...
+	// ...
+	resolve: {
+		extensions: ['.ts', '.js'], 
+	},
+	// ...
+}
+```

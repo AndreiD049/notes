@@ -1,0 +1,42 @@
+created: 20220102130902843
+creator: AndreiD049
+modified: 20220102130925394
+modifier: AndreiD049
+tags: Typescript
+title: Typescript function overload
+type: text/vnd.tiddlywiki
+
+Function overloads in [[Typescript]] help with static analysis.
+
+```ts
+function test(x: number): number;
+function test(x: string, times: number): number;
+function test(x: string): number;
+function test(x: number | string, times?: number): number {
+	if (typeof x === 'number') {
+		return x;
+	} else if (times !== undefined) {
+		return Number.parseInt(x.repeat(times));
+	} else {
+		return Number.parseInt(x);
+	}
+}
+```
+
+Example above will compile down to:
+
+```js
+function test(x, times) {
+    if (typeof x === 'number') {
+        return x;
+    }
+    else if (times !== undefined) {
+        return Number.parseInt(x.repeat(times));
+    }
+    else {
+        return Number.parseInt(x);
+    }
+}
+```
+
+The same way as it would have been written in plain javascript.

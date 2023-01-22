@@ -1,0 +1,27 @@
+created: 20220312103703651
+modified: 20220724171026560
+tags: transferred
+title: Sharepoint Tasks MVP
+type: text/vnd.tiddlywiki
+
+! MVP
+
+!! Phase 1
+
+# Only `daily` tasks supported
+# Single user per task
+# Showing only current user's tasks
+# Simple column based UI
+
+!! Phase 2
+
+# Add support for other users selection
+# Add possibility to add multiple users per task
+# Make the UI improvements
+
+
+!! Optional
+
+# Add animations
+
+{{Sharepoint Tasks MVP Steps}}

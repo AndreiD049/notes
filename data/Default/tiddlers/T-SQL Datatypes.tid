@@ -1,0 +1,15 @@
+created: 20220510173748801
+modified: 20220510174531504
+tags: T-SQL
+title: T-SQL Datatypes
+type: text/vnd.tiddlywiki
+
+[[T-SQL]] define following data type families:
+
+# [[Numeric]]
+# [[Strings]]
+# [[Binary]]
+# [[Temporal]]
+# [[Hierarchy]]
+# [[Spatial]]
+# [[Document]]

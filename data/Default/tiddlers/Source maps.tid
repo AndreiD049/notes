@@ -1,0 +1,22 @@
+created: 20220103211138000
+creator: AndreiD049
+modified: 20220103211227787
+modifier: AndreiD049
+tags: Javascript Css
+title: Source maps
+type: text/vnd.tiddlywiki
+
+Source maps are special files with extension `.map` that help view the original, uncompiled code in the browser, instead of the minified ugly version.
+Code is often written in languages that are not [[Javascript]], but compile to [[Javascript]]. for example [[Typescript]]. When this code is pushed to production, it is compiled and often minimized, so it becomes unreadable.
+Having a source map shipped together with the code will help debug errors in the browser by viewing the original source code, while actually running the minified version.
+
+!! How to enable source maps
+
+In order to enable source maps, you need to ship the file along with the minified version of the source, and also add a special comment to your javascript file:
+
+```js
+//# sourceMappingURL=main.js.map
+```
+
+This is so called `pragma` comment. The browser will see it and load the appropriate source.
+

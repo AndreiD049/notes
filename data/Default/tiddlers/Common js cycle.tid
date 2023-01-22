@@ -1,0 +1,56 @@
+created: 20220103203402786
+creator: AndreiD049
+modified: 20220723190715983
+modifier: AndreiD049
+tags: Javascript transferred
+title: Common js cycle
+type: text/vnd.tiddlywiki
+
+Sometimes [[Common js modules]] depend on one another. In this case, an object might receive a dependency that was not loaded completely. For example:
+
+`a.js`:
+
+```js
+console.log('a starting');
+exports.done = false;
+const b = require('./b.js');
+console.log('in a, b.done = %j', b.done);
+exports.done = true;
+console.log('a done');
+```
+
+`b.js`:
+
+```js
+console.log('b starting');
+exports.done = false;
+const a = require('./a.js');
+console.log('in b, a.done = %j', a.done);
+exports.done = true;
+## ecmascript-modules
+console.log('b done');
+```
+
+`main.js`:
+
+```js
+console.log('main starting');
+const a = require('./a.js');
+const b = require('./b.js');
+console.log('in main, a.done = %j, b.done = %j', a.done, b.done);
+```
+
+The output of above will be:
+
+```md
+main starting
+a starting
+b starting
+in b, a.done=false
+b done
+in a, b.done=true
+a done
+in main, a.done = true, b.done = true
+```
+
+

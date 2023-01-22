@@ -1,0 +1,25 @@
+created: 20220109144449353
+creator: AndreiD049
+modified: 20220109145116833
+modifier: AndreiD049
+tags: Rust
+title: Returning values from a loop
+type: text/vnd.tiddlywiki
+
+In order to return a value from a loop expression, use the `break value;` statement.
+
+Example:
+
+```rs
+fn main() {
+  let mut counter = 0;
+  let result = loop {
+      if counter < 10 {
+          counter += 1;
+      } else {
+          break counter * 10;
+      }
+  };
+  println!("{}", result); // 100
+}
+```

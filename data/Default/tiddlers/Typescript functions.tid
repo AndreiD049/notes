@@ -1,0 +1,12 @@
+created: 20220102123219104
+creator: AndreiD049
+modified: 20220102123350693
+modifier: AndreiD049
+tags: Typescript
+title: Typescript functions
+type: text/vnd.tiddlywiki
+
+* [[Typescript function narrowing]]
+* [[Typescript generic functions]]
+* [[Typescript function overload]]
+* [[Function parameter destructuring in typescript]]

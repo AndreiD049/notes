@@ -1,0 +1,16 @@
+created: 20220103201202661
+creator: AndreiD049
+modified: 20220723202955850
+modifier: AndreiD049
+tags: Javascript transferred
+title: Data attribute
+type: text/vnd.tiddlywiki
+
+Data attributes are special type of html attributes:
+
+```html
+<a data-open="true" href="...">...
+```
+
+From js, this attribute can be accessed by using `.getAttribute()` specifying the full name `data-open`. But there is a more convenient way: using the `dataset` property. You could access it like this `el.dataset.open`.
+

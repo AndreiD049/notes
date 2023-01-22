@@ -1,0 +1,21 @@
+created: 20221224092244960
+modified: 20221225150940722
+tags: Linux Recipe
+title: Linux disable bell (beep) sound from motherboard
+type: text/vnd.tiddlywiki
+
+Remove `pcspkr` module from your system:
+
+```
+sudo rmmod pcspkr
+```
+
+Then, if you reboot, the sound will be back. What you need to do is blacklisting this module from loading when you're booting:
+
+```sh
+# create a file at /etc/modprobe.d/nobeep.conf
+sudo nvim /etc/modprobe.d/nobeep.conf
+
+# add this line to the file
+blacklist pcspkr
+```

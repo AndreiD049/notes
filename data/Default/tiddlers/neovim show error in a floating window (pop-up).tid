@@ -1,0 +1,11 @@
+created: 20230109173652653
+modified: 20230109173805035
+tags: Vim Recipe
+title: neovim show error in a floating window (pop-up)
+type: text/vnd.tiddlywiki
+
+In order to show neovim diagnostics in a floating window, add this to your key bindings:
+
+```lua
+vim.keymap.set('n', 'ge', function () vim.diagnostic.open_float({}) end, { noremap = true, silent = true })
+```

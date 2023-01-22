@@ -1,0 +1,21 @@
+created: 20220102180239073
+creator: AndreiD049
+modified: 20220102180342345
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint webpack chunking
+type: text/vnd.tiddlywiki
+
+You can use a [[Webpack]] [[magic comment|https://webpack.js.org/api/module-methods/#magic-comments]] `/* webpackChunkName: 'name' */` together with a [[Dynamic import]] in order to make your bundle size smaller.
+If you put all your property pane code in method `loadPropertyPaneResources` and create it as a separate chunk, it will never be required for the end user, it will be actually loaded only when editing the component.
+
+```typescript
+  protected async loadPropertyPaneResources(): Promise<void> {
+    return import(
+      /* webpackChunkName: 'BSGProperties' */
+      './property/BSGPropertyPane'
+    ).then(component => {
+      // do something
+    });
+  }
+```

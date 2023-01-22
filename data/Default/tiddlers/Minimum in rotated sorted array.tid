@@ -1,0 +1,76 @@
+created: 20220102165323471
+creator: AndreiD049
+modified: 20220724162217672
+modifier: AndreiD049
+tags: Algorithms transferred
+title: Minimum in rotated sorted array
+type: text/vnd.tiddlywiki
+
+
+Source: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
+```text
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
+
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+
+You must write an algorithm that runs in O(log n) time.
+```
+
+!! Solution
+
+What is the goal? to find the minimum value in a sorted array that might be rotated. (in `log n` time)
+
+When a sorted array is rotated, what we have as a result is actually 2 sorted arrays. And what we need to find is the leftmost value of the smaller (right) one.
+[img[2021-11-25-12-49-24.png]]
+
+But we don't know where left array ends and the right one begins.
+What we can do, we can start choosing pivots and checking if we are in the first or second array?
+
+[img[2021-11-25-12-54-55.png]]
+
+With this pivot, are we in the first array or the second? we can check this by comparing to the left most value, if it's less or equal to the pivot, then we are in the left (first) array.
+In this case this is true, and this means we can safely ignore all the elements before the p1ivot and continue searching in the remaining array(s)
+
+[img[2021-11-25-12-59-03.png]]
+
+Notice we still have 2 sorted arrays left
+
+Say we selected a new pivot:
+
+[img[2021-11-25-12-59-46.png]]
+
+Now the situation is different as it's smaller than the leftmost value, meaning we are in the right array. This means all the values after it are only larger and can be ignored.
+
+Now after few iterations we would arrive at this point:
+[img[2021-11-25-13-02-52.png]]
+
+If the left value is smaller or equal to the right value, it means the array is already sorted, and what we need to do is just return the leftmost value.
+
+```python
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            if nums[left] <= nums[right]:
+                # Array from left to right is already sorted, return the leftmost value
+                return nums[left]
+            pivot = (left + right) // 2
+            # Where is the pivot? left or right array?
+            if nums[pivot] >= nums[left]:
+                # Left, continue searching to the right of the pivot
+                left = pivot + 1
+            else:
+                # Right, continue searching to the left
+                right = pivot
+        return nums[left]
+```
+
+!! Thoughts
+
+When we have to search something in a sorted or rotated array, first should come to mind [[Binary search]]. When thinking of binary search, it's useful to think about which parts of the sequence will be disqualified in this step, in order to make the possible solution list smaller.

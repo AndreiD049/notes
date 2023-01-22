@@ -1,0 +1,31 @@
+created: 20220109141221663
+creator: AndreiD049
+modified: 20220724142719202
+modifier: AndreiD049
+tags: Rust transferred
+title: Function return value
+type: text/vnd.tiddlywiki
+
+In [[Rust]] functions, there are few ways to specify a return value
+
+!!! Implicit
+
+If last thing appearing in a function body is an expression (note there is no semicolon after it, see [[Rust statement vs expression]]) then it will be returned from this function. This is also called the tail of the function.
+
+```rs
+fn sum(a: i32,  b: i32) -> i32 {
+    a + b
+}
+```
+
+!!! Explicit
+
+Explicitly returning a value from a function is done using `return` keyword
+
+```rs
+fn sum(a: i32,  b: i32) -> i32 {
+    return a + b;
+}
+```
+
+Functions that do not return anything, implicitly return [[Unit type]]

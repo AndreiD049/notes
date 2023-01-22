@@ -1,0 +1,15 @@
+created: 20220102114823327
+creator: AndreiD049
+modified: 20220723175836576
+modifier: AndreiD049
+tags: Postgres transferred
+title: Alter role in postgres
+type: text/vnd.tiddlywiki
+
+!! Change role
+
+Alter the role afterwards - `ALTER ROLE rast999 WITH CREATEDB CREATEROLE LOGIN REPLICATION;`
+
+!! Set a new password
+
+Setting new password is the same `ALTER ROLE sample WITH PASSWORD 'newpassword';`

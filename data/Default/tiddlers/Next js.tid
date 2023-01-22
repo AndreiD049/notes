@@ -1,0 +1,20 @@
+created: 20220102172633894
+creator: AndreiD049
+modified: 20220724162928162
+modifier: AndreiD049
+tags: Library Javascript transferred
+title: Next js
+type: text/vnd.tiddlywiki
+
+Next js is a library for creating Backend and frontend for:
+
+* `Statically generated` sites (generated at build time). See [[Next js static generation]]
+* `Server-side rendered` sites (generated at each request on the server) [[Next js server side rendering]]
+* `Client-side generated` data is fetched on the server and DOM is created on the client
+* Next js can be setup by editing `next.config.js`, for example new rules can be added to [[Webpack]] config. See [[Next js webpack config]]
+
+!! How to read local files
+
+To read local files - use `process.cwd()`. Because `__dirname` doesn't work.
+
+<<toc-selective-expandable "Next js">>

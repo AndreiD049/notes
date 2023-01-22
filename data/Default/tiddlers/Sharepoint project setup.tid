@@ -1,0 +1,21 @@
+created: 20220102175250382
+creator: AndreiD049
+modified: 20220125122955548
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint project setup
+type: text/vnd.tiddlywiki
+
+!! Initial setup
+
+# Install yeoman generator <<copy-text "npm i -g yo gulp-cli @microsoft/generator-sharepoint">>
+
+!! Project setup steps
+
+# Scaffold the project using `yo @microsoft/sharepoint` (see [[yeoman|https://yeoman.io/]])
+# Install the self-signed developer [[Sharepoint certificate]] (if you want to test locally)
+# Go to `./config/serve.json` and replace `intialPage` with your site's workbench (for example  <<copy-text "https://devadmintools.sharepoint.com/_layouts/workbench.aspx">>)
+# Start the local web-server with `gulp serve`
+# Start developing using any technology, for example [[React]]
+
+In case of issues see [[Sharepoint troubleshooting]]

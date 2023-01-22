@@ -1,0 +1,15 @@
+created: 20220103205656589
+creator: AndreiD049
+modified: 20220724140601440
+modifier: AndreiD049
+tags: Javascript transferred
+title: Explicit commonjs rules
+type: text/vnd.tiddlywiki
+
+[[Node js]] will determine a package as [[commonjs|Common js modules]] by default.
+
+To specify it explicitly:
+
+* use `.cjs` file extension
+* specify `"type": "commonjs` in [[Package json]]
+* provide a command line argument when running node `--input-type=commonjs`

@@ -1,0 +1,33 @@
+created: 20220325123432616
+modified: 20220724143409877
+tags: transferred
+title: Sharepoint remove buttons from command bar
+type: text/vnd.tiddlywiki
+
+There is a convenient JSON property for editing the buttons on a list's command bar.
+
+Source: https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/view-commandbar-formatting
+
+Below an example of view format.
+
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "commandBarProps": {
+    "commands": [
+      {
+        "key": "new",
+        "hide": true
+      },
+      {
+        "key": "automate",
+        "hide": true
+      },
+      {
+        "key": "integrate",
+        "hide": true
+      }
+    ]
+  }
+}
+```

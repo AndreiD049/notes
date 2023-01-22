@@ -1,0 +1,68 @@
+created: 20220102170636721
+creator: AndreiD049
+modified: 20220724170521271
+modifier: AndreiD049
+tags: 
+title: Product of array except self
+type: text/vnd.tiddlywiki
+
+Source: https://leetcode.com/problems/product-of-array-except-self
+
+```test
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+You must write an algorithm that runs in O(n) time and without using the division operation.
+```
+
+!! Solution
+
+In order to solve this puzzle in `O(n)` speed and `O(1)` memory, we need to use intermediate values in the list we're about to return.
+We need to do 2 passes over the list of numbers. One to compute all products before the given number (prefix), and one pass in reversed order to compute the products of all values after given value (postfixes).
+
+Example, we have an array:
+`nums = [1, 2, 3, 4]`
+
+And say this is the array we're going to return:
+`result = [1, 1, 1, 1]` (it's default filled with ones, although this is not mandatory)
+
+Then we do a loop over all elements in `nums`:
+
+Pass #1:
+
+# value `1` -> goes to index 1 of `result array`, because `1` is the product of all numbers before this index.
+# value `2` -> goes to index 2 of `result array`, because `2 * 1 (previous prefix) = 2` 
+# value `6` -> goes to index 3 of `result`, because `2 * 3 = 6`
+
+After 1st pass our `result` looks like this `[1, 1, 2, 6]`. Every element represents the product of values with lower index from `nums`.
+
+Pass #2 (now in reverse order)
+
+# value `4 * 2 = 8` -> goes to index 2 of `result` array. We multiply the postfix with the prefix that is already in that cell. `postfix = 4`
+# value `4 * 3 * 1 = 12` -> goes to index 1 of `result` array. `postfix = 12`
+# value `12 * 2 * 1 = 24` -> goes to index 0 of `result`.
+
+After 2nd pass, `result` is `[24, 12, 8, 6]` which is our end result.
+
+```python
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        prefix = 1
+        result = [prefix]
+        # Pass 1
+        for i in range(len(nums) - 1):
+            prefix *= nums[i]
+            result.append(prefix)
+        # Pass 2
+        postfix = 1
+        for i in range(len(nums) - 2, -1, -1):
+            postfix *= nums[i+1]
+            result[i] *= postfix
+        return result
+```
+
+!! Thoughts
+
+When we need to each value in an array to some calculation based on other values from that array, we can use this method instead of nested loops.
+For example if i want to modify an array such that every `arr[i]` is equal to sum of all even numbers except `arr[i]` itself. Same method can be used.

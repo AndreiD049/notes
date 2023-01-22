@@ -1,0 +1,29 @@
+created: 20220110185703707
+creator: AndreiD049
+modified: 20220724142220724
+modifier: AndreiD049
+tags: Rust transferred
+title: Unit type
+type: text/vnd.tiddlywiki
+
+Unit `()` type is a special type in [[Rust]].
+
+It has only one value -- `()`.
+
+Most of the time, this value is used implicitly. Functions that do not have a `->` (return type) specified, return the unit type.
+
+An [[expression|Rust statement vs expression]] can be forced to return `()` by placing a semicolon `;` after it. (see [[Function return value]])
+
+Example: 
+
+```rust
+// This returns unit type ()
+fn unit() -> () {
+    4;
+}
+
+// this returns an i32
+fn intret() -> i32 {
+    4
+}
+```

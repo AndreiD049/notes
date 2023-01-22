@@ -1,0 +1,13 @@
+created: 20220205103958247
+creator: AndreiD049
+modified: 20220724131437102
+modifier: AndreiD049
+tags: transferred
+title: Elisp primitive types
+type: text/vnd.tiddlywiki
+
+A few fundamental object types are built into Emacs.  These, from
+which all other types are constructed, are called “primitive types”.
+Each object belongs to one and only one primitive type.  These types
+include “integer”, “float”, “cons”, “symbol”, “string”, “vector”,
+“hash-table”, “subr”, “byte-code function”, and “record

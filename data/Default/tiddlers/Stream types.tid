@@ -1,0 +1,14 @@
+created: 20220103212542535
+creator: AndreiD049
+modified: 20220103212704061
+modifier: AndreiD049
+tags: Javascript
+title: Stream types
+type: text/vnd.tiddlywiki
+
+There are four fundamental stream types within Node.js:
+
+* [[Writable stream]]: streams to which data can be written (for example, `fs.createWriteStream()`).
+* [[Readable stream]]: streams from which data can be read (for example, `fs.createReadStream()`).
+* ''Duplex'': streams that are both [[Readable||Readable stream]] and [[Writable|Writable stream]] (for example, net.Socket).
+* ''Transform'': Duplex streams that can modify or transform the data as it is written and read (for example, zlib.createDeflate()).

@@ -1,0 +1,22 @@
+created: 20220531171546821
+modified: 20220723182633487
+tags: T-SQL transferred
+title: Checking for NULL
+type: text/vnd.tiddlywiki
+
+Checking for NULL in [[T-SQL]] is done like below:
+
+```sql
+-- Check if valus is null
+X IS NULL
+
+-- Check if value is not null
+X IS NOT NULL
+
+-- Example 
+SELECT Customer AS Name 
+    FROM Customers 
+    WHERE Country IS NOT NULL; 
+```
+
+It is not a comparison predicate, it's a state predicate. It can only evaluate to `TRUE` or `FALSE` (see [[3VL or Ternary logic]]) 

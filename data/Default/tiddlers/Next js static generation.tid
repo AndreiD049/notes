@@ -1,0 +1,70 @@
+created: 20220102172816730
+creator: AndreiD049
+modified: 20220724163505807
+modifier: AndreiD049
+tags: [[Next js]] transferred
+title: Next js static generation
+type: text/vnd.tiddlywiki
+
+!! Static generation
+
+Command used to start the generation `next build && next export`.
+
+!! Static generation with data
+
+When you need to call some API, or to get some other data before rendering the page, you can have 2 situations:
+
+1. Your page's ''content'' depends on some parameters
+2. Your page's ''path'' (and most often ''content'') depends on some parameters
+
+For first situation: create `export async function getStaticProps()`, which returns following object:
+
+```ts
+interface StaticProps {
+	props: {
+		// here are the props that your component needs
+		// for example:
+		// posts: ...
+		// id: ...
+	}
+}
+```
+
+This function can go to a database, call some api, or read some local files to determine the props.
+For extra things that can be returned see [[documentation|https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation]]
+
+For cases when you need also a different path to be fetched, use `export async function getStaticPaths()`, which returns following:
+
+```ts
+interface StaticPaths {
+	paths: {
+		params: {
+			// here are the path properties
+			// for example:
+			// id: someid
+		}
+	}
+}
+```
+
+In this case, your `getStaticProps` will get an argument, for each `path` (ex `{ params: { id: 1 } }`) returned by `getStaticPaths`:
+
+```ts
+function getStaticProps(path) { //...
+```
+
+Same as for `getStaticProps`, `getStaticPaths` will probably consult some external data storage.
+
+!! Exceptions
+
+`next/image` package cannot be used with static generation
+
+!! Reading local files
+
+TLDR: use `process.cwd()`
+See [[Next js]]
+
+!! References
+
+# https://nextjs.org/docs/basic-features/pages#static-generation-with-data
+# [[Next js routing]]

@@ -1,0 +1,11 @@
+created: 20220429095735749
+modified: 20220724154817968
+tags: Javascript transferred
+title: Lerna scope multiple packages comma separated
+type: text/vnd.tiddlywiki
+
+Example:
+
+```sh
+lerna run build --scope '{sp-preset,*notificat*,*proper*}'
+```

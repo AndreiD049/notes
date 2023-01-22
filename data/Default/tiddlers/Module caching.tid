@@ -1,0 +1,11 @@
+created: 20220103203251677
+creator: AndreiD049
+modified: 20220724162227584
+modifier: AndreiD049
+tags: Javascript transferred
+title: Module caching
+type: text/vnd.tiddlywiki
+
+If the same [[commonjs|Common js modules]] module is required in multiple files throughout the program, and module is resolved from the same path, then the same exact object will be returned in all of them.
+
+Note: sometimes, when circular dependency happens, a module can be returned which was not completely executed. See [[Common js cycle]]

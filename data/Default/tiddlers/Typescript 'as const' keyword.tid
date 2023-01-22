@@ -1,0 +1,18 @@
+created: 20220102122454950
+creator: AndreiD049
+modified: 20220102122538104
+modifier: AndreiD049
+tags: Typescript
+title: Typescript 'as const' keyword
+type: text/vnd.tiddlywiki
+
+There is a `as const` keyword in typescript that will convert an entire object into a [[literal|Literal types]] interface.
+
+```ts
+let a = {
+	url: "https://google.com",
+	methods: "GET"
+} as const;
+// here a has type { url: "https://google.com", method: "GET" }
+// so you cannot assign any new values to it
+```

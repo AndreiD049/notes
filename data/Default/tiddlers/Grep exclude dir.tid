@@ -1,0 +1,13 @@
+created: 20220505162704687
+modified: 20220724142829222
+tags: transferred
+title: Grep exclude dir
+type: text/vnd.tiddlywiki
+
+In order to exlude directories while `grep`ing:
+
+```bash
+grep -r --exclude-dir="node_modules" "pattern"
+	 |                   |  
+`recursive`  		 `exclude node_modules`
+```

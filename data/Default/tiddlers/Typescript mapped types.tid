@@ -1,0 +1,38 @@
+created: 20220102131135050
+creator: AndreiD049
+modified: 20220102131212542
+modifier: AndreiD049
+tags: Typescript
+title: Typescript mapped types
+type: text/vnd.tiddlywiki
+
+!! Mapped types
+
+Sometimes we want to create new types based on already existing ones.
+
+```ts
+type Flags<Type> = {
+	[Property in keyof Type]: boolean;
+};
+
+type PersonFlags = Flags<Person>; // will contain all person's properties but with boolean type
+```
+
+!! Adding or removing modifiers
+
+Using mapped types you can add or remove `optional` or `readonly` modifiers:
+
+```ts
+type MyPartial<Type> = {
+	-readonly [Property in keyof Type]+?: Type[Property];
+};
+
+/*
+Will be:
+{
+	name?: string | undefined;
+	age: number | undefined
+}
+*/
+const OptPerson = MyPartial<Person>;
+```

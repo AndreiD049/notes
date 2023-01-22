@@ -1,0 +1,13 @@
+created: 20220103204956172
+creator: AndreiD049
+modified: 20220724131802301
+modifier: AndreiD049
+tags: Javascript transferred
+title: Enabling es modules
+type: text/vnd.tiddlywiki
+
+Default module in [[Node js]] at the moment of writing is [[Common js modules]]. To enable features of [[Es modules]]:
+
+* change the file extension to `.mjs`
+* add to your [[package.json|Package json]] following line: `"type": "module"`
+* use node command line argument `--input-type=module`

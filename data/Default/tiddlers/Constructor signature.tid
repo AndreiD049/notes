@@ -1,0 +1,17 @@
+created: 20220102125531407
+creator: AndreiD049
+modified: 20220723194857336
+modifier: AndreiD049
+tags: Typescript transferred
+title: Constructor signature
+type: text/vnd.tiddlywiki
+
+In [[Typescript]] you can declare [[Constructor functions]] (the ones you can call with `new`) like below.
+
+```ts
+type Example = {
+    new (prop: string): SomeObject;
+}
+```
+
+You can also combine it with [[Call signature]]

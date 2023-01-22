@@ -1,0 +1,19 @@
+created: 20220102121955060
+creator: AndreiD049
+modified: 20220724153447473
+modifier: AndreiD049
+tags: Typescript transferred
+title: Interfaces in typescript
+type: text/vnd.tiddlywiki
+
+Interfaces are similar, and mostly interchangeable with [[Type aliases]].
+
+//''Advise'': use interfaces where you can.//
+
+Example:
+
+```ts
+	interface IDisposable {
+		dispose(): void;
+	};
+```

@@ -1,0 +1,13 @@
+created: 20220125184827531
+creator: AndreiD049
+modified: 20220125185021246
+modifier: AndreiD049
+tags: 
+title: Sharepoint permission to create public views
+type: text/vnd.tiddlywiki
+
+In order to restrict users from creating public views for [[Sharepoint lists|Sharepoint list]], remove this access:
+
+```
+Manage Lists  -  Create and delete lists, add or remove columns in a list, and add or remove public views of a list.
+```

@@ -1,0 +1,12 @@
+created: 20220102165027745
+creator: AndreiD049
+modified: 20221211093117516
+modifier: AndreiD049
+tags: Algorithms
+title: Algorithms
+type: text/vnd.tiddlywiki
+
+Here i will document my solutions to various leetcode questions.
+I will first attempt to solve them in [[Python]] or [[Javascript]]
+
+The attempt is to do an explanation of all the questions from [[this list|https://docs.google.com/spreadsheets/d/1sfaK42jUUNIz9_jsQViWCMR5B2_cos_KD31bKI-5bEg/edit#gid=0]]

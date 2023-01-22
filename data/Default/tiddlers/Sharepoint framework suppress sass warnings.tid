@@ -1,0 +1,11 @@
+created: 20220501145112199
+modified: 20220501145157254
+tags: Sharepoint
+title: Sharepoint framework suppress sass warnings
+type: text/vnd.tiddlywiki
+
+In order to suppress css warnings (when using BEM for example), add this to your `gulpfile.js`
+
+```js
+build.addSuppression(/\[sass\]/g);
+```

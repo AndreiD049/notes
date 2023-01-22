@@ -1,0 +1,18 @@
+created: 20220102114043645
+creator: AndreiD049
+modified: 20220723195316530
+modifier: AndreiD049
+tags: Postgres transferred
+title: List users in postgres
+type: text/vnd.tiddlywiki
+
+To list the users, run `SELECT rolname FROM pg_roles;` (note the `;` at the end).
+Or, you can from run `\du` meta-command
+Sample output:
+
+```sh
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ rast999   |                                                            | {}
+```

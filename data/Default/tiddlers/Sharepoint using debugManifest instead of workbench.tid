@@ -1,0 +1,14 @@
+created: 20220127074150190
+creator: AndreiD049
+modified: 20220127074255284
+modifier: AndreiD049
+tags: 
+title: Sharepoint using debugManifest instead of workbench
+type: text/vnd.tiddlywiki
+
+# Create a new project
+# Start spinning up your local environment gulp serve --nobrowser
+# Open the page where you want to test the web part
+# Add the following query strings to the URL: <<copy-text "?loadSPFX=true&debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js">>, when you are developing extensions, you also need to add the additional query string parameters.
+# Edit the page and add the web part to the page
+# Start changing the code

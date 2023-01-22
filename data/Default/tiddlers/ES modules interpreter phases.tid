@@ -1,0 +1,15 @@
+created: 20220403061743628
+modified: 20220724135613083
+tags: Javascript transferred
+title: ES modules interpreter phases
+type: text/vnd.tiddlywiki
+
+! Interpretation phases while running ES modules
+
+The phases that node interpreter is doing while running [[Es modules]] helps to answer the question  `How circular dependencies are handled?` in contrast with [[CommonJS|Common js cycle]]:
+
+* ''Phase 1'' - Construction (or parsing): Find all the imports and recursively load the content of every module from the respective file.
+* ''Phase 2'' - Instantiation: For every exported entity, keep a named reference in memory, but don't assign any value just yet. Also, references are created for all the import and export statements tracking the dependency relationship between them (linking). No JavaScript code has been executed at this stage.
+* ''Phase 3'' - Evaluation: Node.js finally executes the code so that all the previously instantiated entities can get an actual value. Now running the code from the entry point is possible because all the blanks have been filled.
+
+When using [[Es modules]], the interpreter constructs a [[dependency graph|https://en.wikipedia.org/wiki/Directed_graph]], the fills all the blanks by evaluating the code in correct order. This is why, in contrast with [[Common js modules]], the module is completely loaded when it's requested.

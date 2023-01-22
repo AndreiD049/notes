@@ -1,0 +1,21 @@
+created: 20220109073552542
+creator: AndreiD049
+modified: 20220724155052205
+modifier: AndreiD049
+tags: Linux Recipe transferred
+title: List files sizes in Linux
+type: text/vnd.tiddlywiki
+
+To list file sizes in Linux, use `-l` and `-h` flags of `ls` command
+
+//Example: `ls -lh .` will show something like://
+
+```
+total 3.6M
+drwxr-xr-x 4 andrei andrei 4.0K Jan  9 09:27 build
+drwxr-xr-x 2 andrei andrei 4.0K Jan  9 09:27 deps
+drwxr-xr-x 2 andrei andrei 4.0K Jan  9 09:27 examples
+-rwxr-xr-x 2 andrei andrei 3.6M Jan  9 09:27 guessing_game
+-rw-r--r-- 1 andrei andrei  130 Jan  9 09:27 guessing_game.d
+drwxr-xr-x 2 andrei andrei 4.0K Jan  9 09:27 incremental
+```

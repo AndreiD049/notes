@@ -1,0 +1,39 @@
+created: 20220102124951043
+creator: AndreiD049
+modified: 20220102125004356
+modifier: AndreiD049
+tags: Typescript
+title: Typescript tuple type
+type: text/vnd.tiddlywiki
+
+Source: https://www.typescriptlang.org/docs/handbook/2/objects.html#tuple-types
+
+Another type is tuple. Syntax for tuple is `[string, number]` (example of tuple with 2 elements, `string` and `number`).
+A tuple can also have optional properties, and make use of destructuring:
+
+```ts
+// element with index 2 can be undefined
+type Address = [string, number, string?];
+
+function test(a: Address) {
+	const [name, box, city] = a;
+	return name;
+}
+```
+
+Tuples can also have `...rest` elements.
+
+```ts
+// a string, number, and 'some' booleans 
+type StringNumberBooleans = [string, number, ...boolean[]];
+// a string, 'some' booleans followed by a number
+type StringBooleansNumber = [string, ...boolean[], number];
+// 'some' booleans followed by a string and a number
+type BooleansStringNumber = [...boolean[], string, number];
+```
+
+Tuples can also be `readonly`: 
+
+```ts
+type MyTuple = readonly [string, number];
+```

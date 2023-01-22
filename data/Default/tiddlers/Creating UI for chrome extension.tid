@@ -1,0 +1,12 @@
+created: 20220102172435701
+creator: AndreiD049
+modified: 20220723202527026
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Creating UI for chrome extension
+type: text/vnd.tiddlywiki
+
+!! Creating UI for chrome extensions
+
+# Create a `.html file with the ui`
+# Add a `action` property to the manifest. see [[manifest|Creating a manifest]]

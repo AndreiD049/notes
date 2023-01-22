@@ -1,0 +1,9 @@
+created: 20220102121518505
+creator: AndreiD049
+modified: 20220102121645821
+modifier: AndreiD049
+tags: Typescript
+title: Typescript 'any' type
+type: text/vnd.tiddlywiki
+
+When typescript cannot cannot infer the type from context, it will default to type `any`. If this is not desirable, use [[noImplicitAny option|Typescript config file]]

@@ -1,0 +1,20 @@
+created: 20220102115707425
+creator: AndreiD049
+modified: 20220723190237056
+modifier: AndreiD049
+tags: Postgres transferred
+title: Combine queries with union operator
+type: text/vnd.tiddlywiki
+
+!! Sample union example
+
+Union will combines different queries. Columns in all queries must have the same type.
+`UNION` will remove all duplicates from resulting table. There is also `UNION ALL` that will leave the duplicates.
+
+```sql
+SELECT surname
+  FROM cd.members
+    UNION  -- couls also use UNION ALL
+SELECT name
+  FROM cd.facilities;
+```

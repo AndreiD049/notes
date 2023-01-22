@@ -1,0 +1,9 @@
+created: 20220327142009389
+modified: 20220724153729328
+tags: Javascript transferred
+title: Jest install
+type: text/vnd.tiddlywiki
+
+In order to install [[Jest]]
+
+<<copy-text "npm i -D jest @types/jest">>

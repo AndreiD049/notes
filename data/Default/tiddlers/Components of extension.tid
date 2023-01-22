@@ -1,0 +1,12 @@
+created: 20220102171433343
+creator: AndreiD049
+modified: 20220723193020950
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Components of extension
+type: text/vnd.tiddlywiki
+
+!! Component parts of an extension
+
+# Service [[Chrome extension service worker]]
+# Content [[Content scripts]]

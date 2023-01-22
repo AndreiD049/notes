@@ -1,0 +1,28 @@
+created: 20220120171248359
+creator: AndreiD049
+modified: 20220723195117637
+modifier: AndreiD049
+tags: Windows Recipe transferred
+title: Create link in powershell
+type: text/vnd.tiddlywiki
+
+There are 2 types of files in windows, soft and hard.
+
+''Soft links'': just like regular links, there is an arrow symbol next to the icon.
+
+''Hard links'': Make it appear like the file is really on the location, although it's a link.
+
+```powershell
+# Create soft link
+# Path can be either a file or a folder
+
+> New-Item -ItemType SymbolicLink -Path "PathWhereLinkShouldBeCreated" -Target "Target"
+
+# Create hard link for a file
+
+> New-Item -ItemType HardLink -Path "PathWhereLinkShouldBeCreated" -Target "Target"
+
+# Create hard link for a folder (junction point)
+ 
+> New-Item -ItemType Junction -Path "PathWhereLinkShouldBeCreated" -Target "Target"
+```

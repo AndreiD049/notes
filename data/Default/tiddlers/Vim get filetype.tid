@@ -1,0 +1,7 @@
+created: 20220717140744802
+modified: 20220724162652384
+tags: transferred
+title: Vim get filetype
+type: text/vnd.tiddlywiki
+
+To see the filetype of current buffer, type `:set filetype`

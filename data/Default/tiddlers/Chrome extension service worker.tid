@@ -1,0 +1,25 @@
+created: 20220102172119896
+creator: AndreiD049
+modified: 20220723183124044
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Chrome extension service worker
+type: text/vnd.tiddlywiki
+
+!! Chrome extension service workers
+
+A service worker in chrome extension is registered in the [[manifest|Creating a manifest]] using property `background` property.
+
+Service worker is not meant to modify the DOM, in fact it doesn't have a `window` in it's environment. It is meant to listen to events instead.
+
+!! Important: event handlers must be registered synchronously
+
+If you register event handlers in a async function you might miss the events, because browser will terminate the service worker when it's not needed and will spawn it again when it's required.
+
+!! Storage
+
+Because browser will terminate the [[Service worker]] when necessary, you cannot rely on in-memory storage like variables, as they might be reset. Instead, use [[storage-api|https://developer.chrome.com/docs/extensions/reference/storage/]]
+
+!! Example
+
+Example of an event you might want is `chrome.runtime.onInstalled`, which fill fire once when your application is installed. It might be used to setup the environment and do more setup.

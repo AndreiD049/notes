@@ -1,0 +1,12 @@
+created: 20220102175336978
+creator: AndreiD049
+modified: 20220125121545309
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint certificate
+type: text/vnd.tiddlywiki
+
+!! spfx-certificate
+
+To be able to serve your local installation of sharepoint over HTTPS, you will need to trust the self-signed certificate.
+To trust the self-signed developer certificate, run in the root folder of the project - <<copy-text "gulp trust-dev-cert">>

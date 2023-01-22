@@ -1,0 +1,25 @@
+created: 20220102173516808
+creator: AndreiD049
+modified: 20220102173835870
+modifier: AndreiD049
+tags: Scss
+title: Scss export
+type: text/vnd.tiddlywiki
+
+!! Export scss variables
+
+If you want to export a scss variable to [[Javascript]], you can use the `:export` keyword:
+
+```scss
+:export {
+	borderColor: $border-color,
+}
+```
+
+And you can use the variable in javascript:
+
+```ts
+import styles from "./PeriodCard.module.scss";
+
+console.log(styles.borderColor)
+```

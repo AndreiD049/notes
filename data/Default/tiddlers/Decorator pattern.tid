@@ -1,0 +1,23 @@
+created: 20220103213212087
+creator: AndreiD049
+modified: 20220723203458193
+modifier: AndreiD049
+tags: Patterns transferred
+title: Decorator pattern
+type: text/vnd.tiddlywiki
+
+[[Source - refactoring guru|https://refactoring.guru/design-patterns/decorator]]
+
+Decorator design pattern is used to enhance an object using `Composition` instead of inheritance, while preserving the same interface
+
+!! Example
+
+Let's say I have a `DataSource` class in my library. Users of the library have requested a new feature to be able to encrypt the content of the `DataSource`, and other users requested compression of the `DataSource`. Some of them would like to have both. In this case I can just implement two decorators (as seen in <a href="##pseudo-code">pseudo-code</a> section). Then, client can use either one of those, or he can combine them and have something like this `(((FileDataSource) EncryptionDecorator) CompressionDecorator)`
+
+<section id="pseudo-code">
+
+!! Pseudo code
+
+[img[2021-11-07-09-34-16-lmXBEEQred5B.png]]
+
+</section>

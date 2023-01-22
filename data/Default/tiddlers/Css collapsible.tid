@@ -1,0 +1,24 @@
+created: 20220102173920351
+creator: AndreiD049
+modified: 20220723202655944
+modifier: AndreiD049
+tags: Css transferred
+title: Css collapsible
+type: text/vnd.tiddlywiki
+
+!! Collapsible
+
+To make a collapsible element with [[Css]], just transition the `max-height` property
+
+```css
+.content {
+	max-height: 100vh; /* should be big enough to fit content */
+	overflow: hidden;
+	transition: max-height 1s linear;
+}
+
+/* Example */
+.content.collapsed {
+	max-height: 0;
+}
+```

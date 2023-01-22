@@ -1,0 +1,22 @@
+created: 20220510190857903
+modified: 20220723182652368
+tags: T-SQL transferred
+title: 3VL or Ternary logic
+todo: Research and check what is 'State predicate'
+type: text/vnd.tiddlywiki
+
+Ternary logic in [[T-SQL]] represents predicates which may have 3 values:
+
+# TRUE
+# FALSE
+# UNKNOWN
+
+```text
+UNKNOWN value happens when one of the operands is NULL
+```
+
+Rules of ternary logic:
+
+* Any comparison of 2 UNKNOWNs is also UNKNWON
+* Comparison of any KNOWN value to UNKNOWN value is also UNKNOWN
+* A State predicate (a strict Yes or No question), always evaluates to TRUE or FALSE

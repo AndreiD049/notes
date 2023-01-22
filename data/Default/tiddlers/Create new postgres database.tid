@@ -1,0 +1,21 @@
+created: 20220102113851143
+creator: AndreiD049
+modified: 20220723195611255
+modifier: AndreiD049
+tags: Postgres transferred
+title: Create new postgres database
+type: text/vnd.tiddlywiki
+
+To create a new database:
+
+```sh
+createdb mydb
+
+# if you want to create a database with the current user name, just use
+createdb
+
+# to delete a database
+dropdb mydb
+```
+
+It might be that you will get this error - `createdb: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  role "rast999" does not exist`. This means that postgres was installed under role `postgres` and before logging in you will need to create a new role for your normal user (ex. for `rast999`). See [[Create postgres role]].

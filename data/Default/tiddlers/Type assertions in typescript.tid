@@ -1,0 +1,17 @@
+created: 20220102122104638
+creator: AndreiD049
+modified: 20220102122122577
+modifier: AndreiD049
+tags: Typescript
+title: Type assertions in typescript
+type: text/vnd.tiddlywiki
+
+Type assertions have the form `const var = value as SomeType`. They are needed to narrow down the type of a value.
+For example you have a `getElementById()` and you know it will return a `HTMLCanvasElement`, but what is actually returns is `HTMLElement`.
+Using type assertions:
+
+```ts
+const element = document.getElementById() as HTMLCanvasElement;
+/* OR */
+const element = <HTMLCanvasElement>document.getElementById();
+```

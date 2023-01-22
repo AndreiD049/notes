@@ -1,0 +1,50 @@
+created: 20220312100943081
+modified: 20220723203012155
+tags: Sharepoint Project transferred
+title: Data model
+type: text/vnd.tiddlywiki
+
+There will be 2 main tables for [[Sharepoint Tasks]]:
+
+# Tasks - representing the tasks themselves, without linking them with any particular workday
+# Task logs - representing concrete task execution on a certain date
+
+Tasks:
+
+A task should contain information about ''What should be done'', any additional ''description about the task'', ''who'' should do the task, and ''how often'' it has to be done.
+
+```typescript
+enum TaskType {
+	Daily = "Daily",
+	Weekly = "Weekly",
+	Monthly = "Monthly",
+	OneTime = "One time",
+}
+
+interface Task {
+	ID: number;
+	Title: string;
+	Description: string;
+	AssignedTo: PersonOrGroup[];
+	Time: Date;
+	Type: TaskType; // Daily/Weekly/Monthly/OneTime (for MVP we need only daily tasks)
+}
+```
+
+Task log:
+
+A //Task log// should contain information about ''what was done'', ''when'' was it done, ''who'' did it (or didn't do it), any additional ''remark'' of the performed task and ''how long did it take''
+
+```typescript
+type TaskStatus = "open" | "pending" | "finsihed" | "cancelled";
+
+interface TaskLog {
+	ID: number;
+	TaskId: number;
+	DateTimeStarted: Date;
+	DateTimeFinished: Date;
+	Status: TaskStatus;
+	User: Person;
+	Remark: string;
+}
+```

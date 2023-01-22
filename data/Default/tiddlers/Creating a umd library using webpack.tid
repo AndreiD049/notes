@@ -1,0 +1,54 @@
+created: 20220115222512709
+creator: AndreiD049
+modified: 20220723202126112
+modifier: AndreiD049
+tags: Javascript Recipe transferred
+title: Creating a umd library using webpack
+type: text/vnd.tiddlywiki
+
+To create a library that exposes a variable like jquery, using [[Webpack]], but also is available as a [[common js module|Common js modules]]
+
+In your js/ts file, export the necessary functions:
+
+```js
+export default function a(text) {
+	console.log(text);
+}
+```
+
+In your [[config file|Add webpack to a project]]:
+
+```js
+module.exports = {
+  mode: // ...,
+	// ...
+  output: {
+		// ...
+	globalObject: 'this', // <-- this is needed so library can be required as a commonjs module
+    library: {
+      name: 'myLibraryName', // <-- this variable will be exposed by your bundle
+      type: 'umd',
+    },	
+  },
+```
+
+Then you can include it in your html:
+
+```html
+<script src="https://example.org/path/to/mybundle.js"></script>
+<script>
+  myLibraryName.a('webpack');
+</script>
+```
+
+Or js:
+
+```js
+const myLib = require('myLibrary');
+```
+
+See:
+
+* https://webpack.js.org/configuration/output/#outputlibrary
+* https://webpack.js.org/guides/author-libraries/
+* https://webpack.js.org/configuration/output/#outputglobalobject

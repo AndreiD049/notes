@@ -1,0 +1,13 @@
+created: 20220102113544874
+creator: AndreiD049
+modified: 20220723203100953
+modifier: AndreiD049
+tags: Database transferred
+title: What is Acid
+type: text/vnd.tiddlywiki
+
+!! What is ACID
+
+`ACID` stands for atomicity, consistency, isolation, durability.
+
+In short it's the ability of the database to handle complex operations as a single ''transaction'', and guarantee data remains valid even after unforeseen issues like outages or other errors.

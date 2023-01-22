@@ -1,0 +1,12 @@
+created: 20220428194236623
+modified: 20220724154249140
+tags: Javascript transferred
+title: Jest testing react with @testing-library
+type: text/vnd.tiddlywiki
+
+As oposed to [[enzyme|Jest testing react with enzyme]], you can use @testing-library with jest.
+
+# [[Jest install]], or if you want typescript [[Add typescript with jest]]
+# <<copy-text "npm i -D @testing-library/react @testing-library/jest-dom">> (you might need to install a lower version of @testing-library/react if it complains about 'react-dom')
+# If you're using babel, <<copy-text "npm i -D @babel/preset-react">> and add it to `babel.config.js`
+# Start writing tests, see their [[example|https://testing-library.com/docs/react-testing-library/example-intro]] and [[cheatsheet|https://testing-library.com/docs/react-testing-library/cheatsheet]]

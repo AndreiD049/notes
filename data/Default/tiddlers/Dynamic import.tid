@@ -1,0 +1,26 @@
+created: 20220103200945682
+creator: AndreiD049
+modified: 20220723194117021
+modifier: AndreiD049
+tags: Javascript transferred
+title: Dynamic import
+type: text/vnd.tiddlywiki
+
+Normally, with [[Static import]], code of the loaded packages is evaluated at load time.
+Dynamic import is a mechanism useful when you want to import something conditionally, and evaluate the code at run time, like:
+
+```js
+if (somethingIsTrue) {
+ import('./some-package/index.js').then((package) => 
+  /* do something */);
+} else {
+ import('./some-other-package/index.js').then((package) => 
+ /* do something else */);
+}
+```
+
+It is used by calling `import` as a function and providing. It returns a `Promise` containing the imported package.
+Also, you can `await` a dynamic import with a [[Top level await]] (Experimental).
+Using dynamic imports, you can use [[Es modules]] from [[Common js modules]] modules or vice versa.
+
+''WARNING'': using Dynamic import disables such useful features as [[Tree shaking]] done by static analyzers. Use it wisely.

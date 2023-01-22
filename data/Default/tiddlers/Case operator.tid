@@ -1,0 +1,25 @@
+created: 20220102115245173
+creator: AndreiD049
+modified: 20220723181909510
+modifier: AndreiD049
+tags: Postgres transferred
+title: Case operator
+type: text/vnd.tiddlywiki
+
+!! Example CASE operator usage
+
+```sql
+SELECT name,
+    CASE WHEN (monthlymaintenance > 100) THEN
+      'expensive'
+    ELSE
+      'cheap'
+    END AS cost
+    FROM cd.facilities;
+```
+
+Will return something like this:
+
+| !name | !cost    |
+|Court1 |cheap |
+|Court2 | expensive|

@@ -1,0 +1,86 @@
+created: 20220517190210416
+modified: 20220724164316042
+tags: transferred
+title: Omnisharp - debugging c# tests in vscode
+type: text/vnd.tiddlywiki
+
+1. Create a *.runsettings file, example:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+
+    <TargetPlatform>x64</TargetPlatform>
+
+    <TargetFrameworkVersion>net48</TargetFrameworkVersion>
+  </RunConfiguration>
+</RunSettings>
+```
+
+In `settings.json`, add the file you created:
+
+```json
+	"omnisharp.testRunSettings": "MyRunSettings.runsettings",
+```
+
+In `*.csproj` file, add:
+
+```xml
+<PropertyGroup>
+	...
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+	...
+</PropertyGroup>
+```
+
+Create launch.json and tasks.json:
+
+```json
+//tasks
+{
+	"label": "build",
+	"command": "dotnet",
+	"type": "shell",
+	"args": [
+		"build",
+		"/property:GenerateFullPaths=true",
+		"/consoleloggerparameters:NoSummary"
+	],
+	"group": "build",
+	"presentation": {
+		"reveal": "silent"
+	},
+	"problemMatcher": "$msCompile"
+},
+
+
+// launch.json
+	"configurations": [
+        {
+            "name": ".NET Attach debugger",
+            "type": "clr",
+            "request": "attach"
+        },
+        {
+            "name": "Launch tests",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "type": "coreclr",
+            "program": "dotnet",
+            "args": ["test", "--filter", "-v", "n"],
+            "stopAtEntry": false
+        }
+    ],
+```
+
+The run `Launch tests`, then wait for a test like this:
+
+```text
+Process Id: 15304, Name: testhost.net48
+Waiting for debugger attach...
+Process Id: 15304, Name: testhost.net48
+```
+
+After this, run `.NET Attach debugger`, and choose the process Id that was specified by previous task

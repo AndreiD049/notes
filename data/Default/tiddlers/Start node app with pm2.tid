@@ -1,0 +1,13 @@
+created: 20220115130119627
+creator: AndreiD049
+modified: 20220115130210728
+modifier: AndreiD049
+tags: Recipe
+title: Start node app with pm2
+type: text/vnd.tiddlywiki
+
+To run `npm start` using pm2:
+
+```sh
+sudo pm2 start npm -- start
+```

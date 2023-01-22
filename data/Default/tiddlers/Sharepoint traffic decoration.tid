@@ -1,0 +1,7 @@
+created: 20220427171908732
+modified: 20220427171949480
+tags: Sharepoint
+title: Sharepoint traffic decoration
+type: text/vnd.tiddlywiki
+
+In order to avoid getting throttled while calling the api, decorate your traffic by adding a User-agent header in following format: `NONISV|CompanyName|AppName/Version`

@@ -1,0 +1,13 @@
+created: 20220102173306664
+creator: AndreiD049
+modified: 20220723202836858
+modifier: AndreiD049
+tags: Css transferred
+title: Css smooth scroll
+type: text/vnd.tiddlywiki
+
+To add smooth scroll to css, just add:
+
+```css
+scroll-behavior: smooth;
+```

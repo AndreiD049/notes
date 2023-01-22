@@ -1,0 +1,17 @@
+created: 20211228211434654
+creator: AndreiD049
+modified: 20220724143938836
+modifier: AndreiD049
+tags: transferred
+title: How to measure performance of enterprise applications
+type: text/vnd.tiddlywiki
+
+There are many measurements that can be done for [[enterprise apps|Definition of enterprise application]]:
+
+* Response time
+* Responsiveness
+* How Response or responsiveness change under [[load|Load testing]]
+* [[Scalability]]
+* Performance (transactions per second)
+
+Source: [[Patterns of enterprise applications architecture]]

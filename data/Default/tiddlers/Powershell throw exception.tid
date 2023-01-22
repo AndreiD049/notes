@@ -1,0 +1,14 @@
+created: 20220413132149604
+modified: 20220724170303972
+tags: Recipe transferred
+title: Powershell throw exception
+type: text/vnd.tiddlywiki
+
+Source: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.2
+
+```powershell
+function Start-Something
+{
+    throw "Bad thing happened"
+}
+```

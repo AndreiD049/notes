@@ -1,0 +1,49 @@
+created: 20220102175516028
+creator: AndreiD049
+modified: 20220102180006588
+modifier: AndreiD049
+tags: Sharepoint
+title: Property controls
+type: text/vnd.tiddlywiki
+
+!! Part 1. Build the react component
+
+Create a react component that will be rendered by sharepoint in the property pane. Nothing special here.
+
+!! Building the property pane component
+
+# Create the interface that will be exposed publicly in `src/controls/MyPropertyControl/` folder. Those are the fields that you will pass to your property from the web-part.
+# Create the internal interface that extends both public properties defined in step 1 and `IPropertyPaneCustomFieldProps` provided from Microsoft.
+# Create a class that implements `IPropertyPaneField<IYourPublicPropsFromStep1>`
+# This class will have 3 public properties defined by the interface:
+## `type`: Must be set to `PropertyPaneFieldType.Custom` for a custom property pane control. WARNING: make sure to set the value, not type, so `public type = PropertyPaneFieldType.Custom`, if you don't set this value, the `onRender` method will not be called
+## `targetProperty`: Used to specify the name of the web part property to be used with the control.
+## `properties`: Used to define control-specific properties. Should implement the internal interface defined at `step 2`.
+# Then create an `onRender` and `onDispose` methods and assign them to `this.properties` also binding `this` to the class instance (for example `onRender: this.onRender.bind(this),`)
+# Signature for `onRender(htmlElement, context, onChangeCallback)`. `onChangeCallback` is quite important here, it has the signature `(targetKey: string, newValue: string) => void` and when you call it, `this.properties` in your web component are updated, so you can save it in a private field to be used later.
+
+Example onRender:
+
+```ts
+	private onRender(elem: HTMLElement, ctx?: any, changeCallback?: (targetProp?: string, newValue?: string) => void) {
+		if (!this.elem) {
+			this.elem = elem;
+		}
+
+		const element: React.ReactElement<IColorFieldProps> = React.createElement(
+			ColorField,
+			{
+				onChanged: this.onChanged.bind(this),
+			}
+		);
+		ReactDOM.render(element, this.elem);
+
+		if (changeCallback) {
+			this._onChangeCallback = changeCallback;
+		}
+	}
+```
+
+!! Example ~GitHub repository
+
+See [[this repository|https://github.com/AndreiD049/spfx-property-control-template]] for an example.

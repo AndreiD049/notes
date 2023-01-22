@@ -1,0 +1,18 @@
+created: 20220106212218543
+creator: AndreiD049
+modified: 20220723204529611
+modifier: AndreiD049
+tags: $:/tags/Macro transferred
+title: Details macro
+type: text/vnd.tiddlywiki
+
+\define details(sum, content, attrs="")
+
+<$set name=col value={{{ [[$:/palette]get[text]getindex[code-background]] }}}>
+<details style={{{ [<col>addprefix[background-color: ]addsuffix[;padding: .2em 1em;cursor: pointer;]] }}} $attrs$>
+<summary>$sum$</summary>
+$content$
+</details>
+</$set>
+
+\end

@@ -1,0 +1,20 @@
+created: 20220102114510356
+creator: AndreiD049
+modified: 20220724165711208
+modifier: AndreiD049
+tags: Database transferred
+title: Postgres
+type: text/vnd.tiddlywiki
+
+!! Postgres is a Open source object relational database
+
+# Documentation -- [[https://www.postgresql.org/docs/]]
+# Other online resources -- [[https://www.postgresql.org/docs/online-resources/]]
+# Exercises -- [[https://pgexercises.com/gettingstarted.html]]
+
+
+!! To revisit
+
+* Creating views -- [[https://www.postgresql.org/docs/current/tutorial-views.html]]
+* Window functions -- [[https://www.postgresql.org/docs/current/tutorial-window.html]]
+* Inheritance -- [[https://www.postgresql.org/docs/current/tutorial-inheritance.html]]

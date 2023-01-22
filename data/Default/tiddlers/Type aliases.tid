@@ -1,0 +1,10 @@
+created: 20220102121919853
+creator: AndreiD049
+modified: 20220102121935712
+modifier: AndreiD049
+tags: Typescript
+title: Type aliases
+type: text/vnd.tiddlywiki
+
+A type alias has the syntax `type TypeName = type`.
+For example `type Point = { x: number, y: number }`.

@@ -1,0 +1,21 @@
+created: 20220102172939364
+creator: AndreiD049
+modified: 20220724163546663
+modifier: AndreiD049
+tags: [[Next js]] transferred
+title: Next js routing
+type: text/vnd.tiddlywiki
+
+!! Routing
+
+It's possible to access the `router` object in your react component (via `useRouter` hook from `next/router`). You can use it mostly like react-router, ex: `router.push('/some-path')`.
+
+There are 3 types of routes:
+
+# Predefined routes. When the file is created on the server and is not generated dynamically.
+# Dynamic routes. Routes using dynamic parameters, for example `/pages/posts/[id].js` will match `/posts/124`, and `/posts/234` etc.. (see [[Next js static generation]] for more info)
+# Catch all routes. They are created as `[...slug].js` with 3 dots. For example `/pages/posts/[...slug].js` will match any route like `/posts/a`, and `/posts/a/b` and so on. A catch-all route can also be made _optional_ using double square brackets. Example: `/posts/pages/[[...slug]].js`. This means that it can also catch the `/posts/pages` route (without any parameters)
+
+The parameters passed to dynamic or catch-all routes can be accessed in `router.query`. For catch-all, the parameter will always be an `array`.
+
+Note: Predefined routes take precedence over dynamic routes, and dynamic routes over catch all routes.

@@ -1,0 +1,16 @@
+created: 20220103202605603
+creator: AndreiD049
+modified: 20220723154029025
+modifier: AndreiD049
+tags: Javascript transferred
+title: Add jest to a project (with babel)
+type: text/vnd.tiddlywiki
+
+# Install [[Jest]] with <<copy-text "npm i -D jest">>
+# If you wish to use [[Babel]], for example you want typescript - <<copy-text "npm i -D babel-jest @babel/core @babel/preset-env">> and add to `babel.config.js`:
+
+```js
+module.exports = {
+  presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+};
+```

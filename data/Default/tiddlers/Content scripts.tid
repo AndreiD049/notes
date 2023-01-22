@@ -1,0 +1,19 @@
+created: 20220102172017335
+creator: AndreiD049
+modified: 20220723190027254
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Content scripts
+type: text/vnd.tiddlywiki
+
+!! What are content scripts
+
+Content scripts contain code that is meant to be inserted to the page's DOM and modify content there.
+
+!! Static injection
+
+Static script and css injection is done via manifest file. Using `content_scripts` property (see [[Creating a manifest]])
+
+!! Dynamic injection
+
+Dynamic script injection can be done at runtime in response to events. It's done using `chrome.scripting.executeScript` (see [[documentation|https://developer.chrome.com/docs/extensions/reference/scripting/#method-executeScript]])

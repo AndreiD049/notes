@@ -1,0 +1,33 @@
+created: 20220102124413939
+creator: AndreiD049
+modified: 20220102125448858
+modifier: AndreiD049
+tags: Typescript
+title: Typescript all or none
+type: text/vnd.tiddlywiki
+
+For example i have this interface:
+
+```ts
+interface {
+	text: string;
+	Component1?: any;
+	Component2?: any;
+}
+```
+
+I want Component1 and Component2 to be optional, but if either of them is specified, then i want them mandatory.
+
+Solution:
+
+```ts
+type AllOrNone<T> = T | {[K in keyof T]?: never};
+
+export type RatingProps = {
+	text: string;
+	additionlText?: string;
+} & AllOrNone<{
+	EmptySVGComponent: any;
+	FullSVGComponent: any;
+}>;
+```

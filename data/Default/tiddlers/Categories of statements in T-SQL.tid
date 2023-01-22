@@ -1,0 +1,11 @@
+created: 20220510160313154
+modified: 20220723182012253
+tags: T-SQL transferred
+title: Categories of statements in T-SQL
+type: text/vnd.tiddlywiki
+
+There are 3 base categories of statements in [[T-SQL]]:
+
+# ''DML'' (Data Manipulation Language) - statements used to insert data (//INSERT, UPDATE, DELETE//) or query information from database (//SELECT//)
+# ''DDL'' (Data Definition Language) - statments used to define the database schema and create tables (//CREATE, ALTER, DROP//)
+# ''DCL'' (Data Control Language) - statements used to manage users and their permissions (//GRANT, REVOKE, DENY//)

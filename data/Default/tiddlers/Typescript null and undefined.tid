@@ -1,0 +1,25 @@
+created: 20220102122628662
+creator: AndreiD049
+modified: 20220102122857532
+modifier: AndreiD049
+tags: Typescript
+title: Typescript null and undefined
+type: text/vnd.tiddlywiki
+
+In [[Typescript]], it depends how `null` and `undefined` work depending on [[compile option|Typescript config file]] `strictNullChecks`, or `strict` to enable them all.
+
+Without `strictNullChecks`, those values work the same as in normal [[Javascript]], you can assign them to any value.
+
+With `strictNullChecks`, you can no longer assign `null` and `undefined` to values that do not specify this in their types.
+Also, you have to check values for their type before accessing specific properties
+
+```ts
+function dispose(obj: IDisposable | null) {
+	// obj.dispose() this would be an error, obj is probably null
+	if (obj !== null) {
+		obj.dispose // this is fine
+	}
+}
+```
+
+If you are sure object is not null, you can use [[Null assertion operator]]

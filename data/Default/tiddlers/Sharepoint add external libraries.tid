@@ -1,0 +1,15 @@
+created: 20220313082341010
+modified: 20220313082659022
+tags: Sharepoint
+title: Sharepoint add external libraries
+type: text/vnd.tiddlywiki
+
+Source: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/basics/add-an-external-library
+
+In folder `config` -> file `config.json`, add library to `"externals"` property.
+
+Example:
+
+```json
+"jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
+```

@@ -1,0 +1,16 @@
+created: 20220413145952701
+modified: 20220724170223763
+tags: Recipe transferred
+title: Powershell split long command over multiple lines
+type: text/vnd.tiddlywiki
+
+Source: https://stackoverflow.com/questions/2608144/how-to-split-long-commands-over-multiple-lines-in-powershell
+
+In order to split a command, use backticks `` ` ``:
+
+```powershell
+&"C:\Program Files\IIS\Microsoft Web Deploy\msdeploy.exe" `
+-verb:sync `
+-source:contentPath="c:\workspace\xxx\master\Build\_PublishedWebsites\xxx.Web" `
+-dest:contentPath="c:\websites\xxx\wwwroot,computerName=192.168.1.1,username=administrator,password=xxx"
+```

@@ -1,0 +1,44 @@
+created: 20220103211307592
+creator: AndreiD049
+modified: 20220103212616986
+modifier: AndreiD049
+tags: Javascript
+title: Readable stream
+type: text/vnd.tiddlywiki
+
+[[Source|https://nodejs.org/docs/latest-v15.x/api/stream.html]]
+
+Readable streams use the [[Event emitter]] API to communicate that data is available to be read.
+
+Examples of `Readable` streams include:
+
+* [[HTTP responses, on the client|https://nodejs.org/docs/latest-v15.x/api/stream.htmlhttp.html#http_class_http_incomingmessage]]
+* [[HTTP requests, on the server|https://nodejs.org/docs/latest-v15.x/api/stream.htmlhttp.html#http_class_http_incomingmessage]]
+* [[fs read streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlfs.html#fs_class_fs_readstream]]
+* [[zlib streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlzlib.html]]
+* [[crypto streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlcrypto.html]]
+* [[TCP sockets|https://nodejs.org/docs/latest-v15.x/api/stream.htmlnet.html#net_class_net_socket]]
+* [[child process stdout and stderr|https://nodejs.org/docs/latest-v15.x/api/stream.htmlchild_process.html#child_process_subprocess_stdout]]
+* [[process.stdin|https://nodejs.org/docs/latest-v15.x/api/stream.htmlprocess.html#process_process_stdin]]
+
+
+<h2 id="two-reading-modes" >Two reading modes</h2>
+
+Readable streams can be in one of two reading modes: `flowing` and `paused`.
+
+* `flowing` mode: activated when `stream.resume()` is called or `data` event handler is added to the stream, or when a [[Writable stream]] is `pipe`d to it. It will start reading the data asap and provide it to the handler.
+* `paused` mode: in this mode, user need to call `stream.read()` explicitly to get the data. It is the default mode when stream is created. To pause a `flowing` stream, call `stream.pause`, or `unpipe` all the streams attached to it. **Removing the `data` event handler will not work.**
+
+''It is recommended to use only one type of API. Either events, `pipe`, or async iterators.''
+
+!! Useful events
+
+* `data`: event is fired when a piece of data is handled to the user
+* `readable`: fired when there is data available. Also fired when there is no more data to be read
+* `end`: fires when all data has been read
+
+!! Useful methods
+
+* `pipe`: pipes the stream to a [[Writable stream]], switching it to <a class="tc-btn-invisible tc-tiddlylink" href="#two-reading-modes">flowing mode</a>
+* `unpipe`: removes piped stream
+* `read`: reads data from the [[Stream buffering]] and returns it if available, else `null`

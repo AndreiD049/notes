@@ -1,0 +1,15 @@
+created: 20220319115440374
+modified: 20220319115701781
+tags: Sharepoint
+title: Sharepoint sp no metadata
+type: text/vnd.tiddlywiki
+
+If you're using @pnp/sp library, and you want to make the amount of data returned by rest smalled, you can use the 'nometadata' `Accept` header like this:
+
+```ts
+import { InjectHeaders } from '@pnp/queryable';
+
+const sp = spfi().using(SPFx(context), InjectHeaders({
+	'Accept': 'application/json;odata=nometadata'
+}));
+```

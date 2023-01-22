@@ -1,0 +1,17 @@
+created: 20220103201008876
+creator: AndreiD049
+modified: 20220724164718531
+modifier: AndreiD049
+tags: Javascript transferred
+title: Package json
+type: text/vnd.tiddlywiki
+
+Important fields in `package.json`:
+
+* ''name'': used for named imports as the name of the package
+* ''type'': can be "module" or "commonjs". Specifies how [[Node js]] modules are treated when imported. The "type" fields specifies not only how the entry point file is treated, but also all files that are imported in it. If omitted, default type is [[commonjs|Common js modules]].
+* ''main'': Specifies the entry point of the package.
+* ''exports'': Same as "main", but with extra features. "main" is supported in older version of node, while "exports" is a newer feature. It can be a path or a list of paths that are exported by the package. Other files will not be exported. Conditional exports based on environment and how package is imported are possible, see [[Conditional module export]]. For examples, see [[Export example]].
+* ''imports'': additionally to exports, it is possible to define internal import aliases, and interchange them conditionally. See [[Import example]]
+* ''types'': if you're using [[Typescript]], then you will want to specify this field and point it to a `.d.ts` file. This way, users importing your package from typescript can benefit from type definitions.
+

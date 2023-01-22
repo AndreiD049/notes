@@ -1,0 +1,21 @@
+created: 20220119172157146
+creator: AndreiD049
+modified: 20220724130824128
+modifier: AndreiD049
+tags: Linux Recipe transferred
+title: Edit cron tasks for other user
+type: text/vnd.tiddlywiki
+
+In order to edit cron tasks in [[Linux]]:
+
+```sh
+crontab -e
+```
+
+To edit tasks as other user:
+
+```sh
+crontab -e -u username
+```
+
+To see a list of usernames see [[List all users in Linux]]

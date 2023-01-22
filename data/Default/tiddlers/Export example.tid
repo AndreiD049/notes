@@ -1,0 +1,87 @@
+created: 20220103205811311
+creator: AndreiD049
+modified: 20220724141332242
+modifier: AndreiD049
+tags: Javascript transferred
+title: Export example
+type: text/vnd.tiddlywiki
+
+!! exports-examples
+
+You can export separate entry points:
+
+```json
+{
+  "name": "my-mod",
+  "exports": {
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/index": "./lib/index.js",
+    "./lib/index.js": "./lib/index.js",
+    "./feature": "./feature/index.js",
+    "./feature/index.js": "./feature/index.js",
+    "./package.json": "./package.json"
+  }
+}
+```
+
+As well as entire folders:
+
+```json
+{
+  "name": "my-mod",
+  "exports": {
+    ".": "./lib/index.js",
+    "./lib": "./lib/index.js",
+    "./lib/*": "./lib/*.js",
+    "./feature": "./feature/index.js",
+    "./feature/*": "./feature/*.js",
+    "./package.json": "./package.json"
+  }
+}
+```
+
+It is preferable to define both `main` and `exports`.
+
+```json
+...
+"main": "./index.js",
+"exports": "./index.js",
+...
+```
+
+When `exports` is supported, it will encapsulate all your other files and they will not be importable be users of your package.
+Please note, that it is still possible to import non-exported files by referencing them with absolute path `require(/absolute/path/to/package/subfolder/secret.js)`
+
+When more than 1 `exports` path is mentioned, main entry point is the one defined as `"."`.
+
+```json
+{
+  "main": "./main.js",
+  "exports": {
+    ".": "./main.js", // this is the entry point
+    "./submodule": "./src/submodule.js"
+  }
+}
+```
+
+## Sub path patterns
+
+In cases when there are a lot of files to be specified in exports or imports, it is possible to specify patterns like below. Also applies to [[Import example]]
+
+```json
+...
+"exports": {
+  "./features/*": "./src/features/*.js"
+},
+"imports": {
+  "#internal/*": "./src/internal/*.js"
+}
+...
+```
+
+Example usage:
+
+```js
+import featureX from 'mypackage/features/x'; // resolves to ./mypackage/features/x.js
+```

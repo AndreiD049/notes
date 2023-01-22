@@ -1,0 +1,25 @@
+alias: ecmascript modules
+created: 20220103200956270
+creator: AndreiD049
+modified: 20220724135310020
+modifier: AndreiD049
+tags: Javascript transferred
+title: Es modules
+type: text/vnd.tiddlywiki
+
+> ECMAScript is the official standard format to package [[Javascript]] code for reuse.
+
+* To understand how to start working with es modules in [[Node js]], see [[Enabling es modules]]
+* To see what kind of strings you can provide to `import * from ...` [[Import specifiers]]
+* You can import [[Common js modules]] from [[Es modules]] but not vice versa. (see [[How to import cjs from ejs modules]])
+* For differences between [[Es modules]] and [[Common js modules]], see [[Es modules vs commonjs modules]]
+* Resolver algorithm is quite confusing, but can be found [[here|https://nodejs.org/docs/latest-v15.x/api/esm.html#esm_resolver_algorithm]]
+
+!! Mandatory file extensions
+
+To match the way files are referenced in the browser, file extensions must be used
+
+!! `import.meta` properties
+
+There is a `import.meta.url` property which provides a link to the current module file.
+

@@ -1,0 +1,11 @@
+created: 20220109150917167
+creator: AndreiD049
+modified: 20220724143608332
+modifier: AndreiD049
+tags: Rust transferred
+title: Ownership rules
+type: text/vnd.tiddlywiki
+
+* Each value in Rust has a variable that’s called its owner.
+* There can only be one owner at a time.
+* When the owner goes out of scope, the value will be [[dropped|How memory is dropped]].

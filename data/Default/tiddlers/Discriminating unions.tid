@@ -1,0 +1,31 @@
+created: 20220102130451469
+creator: AndreiD049
+modified: 20220724125018887
+modifier: AndreiD049
+tags: Typescript transferred
+title: Discriminating unions
+type: text/vnd.tiddlywiki
+
+If a [[Union types in typescript]] contains types which all have a common property of some literal type, this property can be used for [[narrowing|Typescript function narrowing]]:
+
+```ts
+	type Circle = {
+		kind: "circle"; // literal Type
+		radius: number;
+	};
+
+	type Square = {
+		kind: "square"; // literal Type
+		side: number;
+	};
+
+	type Shape = Circle | Square;
+
+	function testShape(shape: Shape) {
+		if (shape.kind === "circle") {
+			// here shape is a Circle
+		} else {
+			// and here it's a Square
+		}
+	}
+```

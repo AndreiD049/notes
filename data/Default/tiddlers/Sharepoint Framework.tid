@@ -1,0 +1,36 @@
+created: 20220102174022784
+creator: AndreiD049
+modified: 20220203211558009
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint Framework
+type: text/vnd.tiddlywiki
+
+!! Sharepoint Project setup
+
+[[Sharepoint project setup]] is done using [[yeoman|https://yeoman.io/]]
+
+Source: https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part
+
+!! Sharepoint Useful libraries
+
+Useful libraries for sharepoint development are:
+
+* [[@pnp/spfx-property-controls|https://pnp.github.io/sp-dev-fx-property-controls/]] - to find many useful property controls, or you can [[build your own|Property controls]]
+* [[@pnp/sp|https://pnp.github.io/pnpjs/sp/]] - a fluent API to call Sharepoint services `npm install @pnp/sp @pnp/graph`. See [[Sharepoint pnp]]
+* https://github.com/s-KaiNet/spfx-fast-serve
+* [[React]]
+* [[Typescript]]
+
+!! Sharepoint Bundle size control
+
+In order to keep the bundle size smaller, you can use [[Sharepoint webpack chunking]]
+//If you are using only react fabric components, you can run `npm uninstall @microsoft/sp-office-ui-fabric-core` to reduce bundle size.//
+
+!! Sharepoint Package solution
+
+See [[Package sharepoint framework solution]]
+
+!! Resources
+
+[[Sharepoint resources]]

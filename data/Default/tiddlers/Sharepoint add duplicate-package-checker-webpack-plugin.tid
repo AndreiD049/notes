@@ -1,0 +1,23 @@
+created: 20220419165329840
+modified: 20220419165601962
+tags: Sharepoint
+title: Sharepoint add duplicate-package-checker-webpack-plugin
+type: text/vnd.tiddlywiki
+
+In order to add [[duplicate-package-checker-webpack-plugin|https://www.npmjs.com/package/duplicate-package-checker-webpack-plugin]], install it with <<copy-text "npm i -D duplicate-package-checker-webpack-plugin">>, then add this to `gulpfile.js`:
+
+```js
+build.configureWebpack.mergeConfig({
+  additionalConfiguration: (generatedConfiguration) => {
+		generatedConfiguration.plugins.push(new DuplicatePackageCheckerPlugin({
+			emitError: true,
+			exclude: (instance) => {
+				// Sometimes different dependencies use the same package with different versions, if there is no possibility to avoid it, we can skip
+				if (instance.name === '@microsoft/load-themed-styles') return true; 
+				return false;
+			}
+		}));
+		return generatedConfiguration;
+	}
+});
+```

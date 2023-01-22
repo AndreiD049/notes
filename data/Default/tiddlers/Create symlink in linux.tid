@@ -1,0 +1,15 @@
+created: 20220122160056621
+creator: AndreiD049
+modified: 20220723201644550
+modifier: AndreiD049
+tags: Linux Recipe transferred
+title: Create symlink in linux
+type: text/vnd.tiddlywiki
+
+Links are created using the `ln` command.
+
+```sh
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+```
+
+For windows, see [[Create link in powershell]]

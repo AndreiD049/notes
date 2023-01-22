@@ -1,0 +1,29 @@
+created: 20220102125937872
+creator: AndreiD049
+modified: 20220102131411658
+modifier: AndreiD049
+tags: Typescript
+title: Typescript property modifiers
+type: text/vnd.tiddlywiki
+
+Indexed access types are used similarly to property access in [[Javascript]], but in `type context`.
+
+```ts
+interface Person {
+	name: string;
+	age: number;
+};
+
+type NameType = Person[name];
+```
+
+You can also get a type of an element in array by using `number` as index:
+
+```ts
+type PersonArray = {
+	name: string;
+	age: number;
+}[];
+
+type Age = PersonArray[number]["age"]; // type is number
+```

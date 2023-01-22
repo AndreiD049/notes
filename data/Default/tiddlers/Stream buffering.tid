@@ -1,0 +1,11 @@
+created: 20220103212247435
+creator: AndreiD049
+modified: 20220103212450753
+modifier: AndreiD049
+tags: Javascript
+title: Stream buffering
+type: text/vnd.tiddlywiki
+
+All [[Streams]] will have some kind of a buffer.
+The size of the buffer depends on `highWatermark` option supplied. (By default 16kb)
+The buffer is no a hard limit, it's just a threshold where user is notified that there is a certain amount of data in it. For example: if the buffer of [[Writable stream]] is getting full, it will start returning `false` for `write`s, but if user continues to `write` data, it will still be buffered, until the memory limit is reached (this is where the process will exit unconditionally)

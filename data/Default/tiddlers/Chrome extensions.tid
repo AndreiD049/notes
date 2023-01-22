@@ -1,0 +1,13 @@
+created: 20220102171128708
+creator: AndreiD049
+modified: 20220723190048453
+modifier: AndreiD049
+tags: transferred
+title: Chrome extensions
+type: text/vnd.tiddlywiki
+
+!! How to develop chrome extensions?
+
+# Start by [[Creating a manifest]]
+# [[Run extension in browser]]
+# [[Components of extension]]

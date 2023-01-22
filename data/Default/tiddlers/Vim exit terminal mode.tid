@@ -1,0 +1,11 @@
+created: 20220117072417226
+creator: AndreiD049
+modified: 20220117170013138
+modifier: AndreiD049
+tags: Recipe
+title: Vim exit terminal mode
+type: text/vnd.tiddlywiki
+
+To exit terminal mode in [[Vim]] or [[Neovim]], press `Ctrl` + `\` `Ctrl` + `n`
+
+See `:help terminal-emulator` for a mapping suggestion.

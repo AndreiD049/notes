@@ -1,0 +1,40 @@
+created: 20220103202940751
+creator: AndreiD049
+modified: 20220723175111947
+modifier: AndreiD049
+tags: Javascript Recipe transferred
+title: Add webpack to a project
+type: text/vnd.tiddlywiki
+
+To add [[Webpack]] to your project:
+
+# `npm i -D webpack webpack-cli [webpack-dev-server]`
+# Create a `webpack.config.js`
+
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+	mode: 'development',
+	entry: __dirname + '/index.ts',
+	output: {
+		path: __dirname + '/dist',
+		filename: 'index.js',
+		publicPath: '/'
+	},
+	resolve: {
+		extensions: ['.ts', '.js'],
+	},
+	module: {
+		rules: [ ]
+	},
+	// this plugin is necessary if you want your bundle to be added to a html while developing
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: __dirname + '/public/index.html',
+			inject: 'body',
+			publicPath: __dirname + '/public'
+		})
+	],
+}
+```

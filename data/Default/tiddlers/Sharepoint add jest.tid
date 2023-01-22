@@ -1,0 +1,32 @@
+created: 20220328162038681
+modified: 20220403072515920
+tags: Sharepoint
+title: Sharepoint add jest
+type: text/vnd.tiddlywiki
+
+For [[jest|Jest]] installation see: [[Jest install with typescript]]
+
+Add following to your `jest.config.js`:
+
+```js
+// An array of directory names to be searched recursively up from the requiring module's location
+moduleDirectories: [
+	"node_modules"
+],
+...
+preset: "ts-jest",
+...
+// A list of paths to directories that Jest should use to search for files in
+roots: [
+	"<rootDir>/src/"
+],
+...
+// The test environment that will be used for testing
+testEnvironment: "jest-environment-jsdom",
+```
+
+{{Jest testing react with enzyme}}
+
+Create [[stubs|Jest stub irrelevant files]]
+
+If you need to do snapshot testing, see [[Snapshot testing with enzyme]]

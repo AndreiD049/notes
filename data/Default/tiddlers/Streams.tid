@@ -1,0 +1,13 @@
+created: 20220103212455626
+creator: AndreiD049
+modified: 20220103212746822
+modifier: AndreiD049
+tags: Javascript
+title: Streams
+type: text/vnd.tiddlywiki
+
+There is also promises version at `stream/promises`
+
+!! Types of streams
+
+There are 4 types of streams. See [[Stream types]]

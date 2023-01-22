@@ -1,0 +1,44 @@
+created: 20220327142101605
+modified: 20220724153830284
+tags: Javascript transferred
+title: Jest install with typescript
+type: text/vnd.tiddlywiki
+
+For installation of jest, see [[Jest install]]
+
+!! With [[ts-jest|https://www.npmjs.com/package/ts-jest]]
+
+A way to run [[Jest]] with typescript is ts-jest:
+
+<<copy-text "npm install --save-dev jest typescript ts-jest @types/jest">>
+
+
+!! With [[Babel]]
+
+''An important difference with Babel is that it's doing only transpilation (transforms typescript syntax to pure js). In order to have type checks when running jest, either use js-test (see above), or run a [[Compile typescript]] command separately (with [[watch|Watch typescript changes]]). Or if you're using vscode or other IDE, it will do it for you.''
+
+First, install [[Babel]] and jest presets with <<copy-text "npm i -D babel-jest @babel/core @babel/preset-env @babel/preset-typescript">>
+
+Then, add following to your `babel.config.js`:
+
+```js
+// babel.config.js
+
+module.exports = {
+  presets: [
+    ['@babel/preset-env', {targets: {node: 'current'}}],
+    '@babel/preset-typescript',
+  ],
+};
+```
+
+!! VScode autocomplete for tests
+
+In order to have intellisense in Vscode, add following to tsconfig.json:
+
+```json
+	"types": [
+		...,
+		"jest"
+	],
+```

@@ -1,0 +1,13 @@
+created: 20220102172521307
+creator: AndreiD049
+modified: 20220723154146097
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Add options page in chrome extension
+type: text/vnd.tiddlywiki
+
+!! In order to add an options page
+
+# Create a html file that will be shown on options (example `options.html`)
+# Add `options_page` property to the [[manifest|Creating a manifest]]
+# Additionally, add respective javascript files

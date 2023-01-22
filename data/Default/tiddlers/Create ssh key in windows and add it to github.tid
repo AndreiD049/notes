@@ -1,0 +1,12 @@
+created: 20211228212358554
+creator: AndreiD049
+modified: 20221221204241347
+modifier: AndreiD049
+tags: Recipe Windows transferred
+title: Create ssh key in windows and add it to github
+type: text/vnd.tiddlywiki
+
+# Create an [[Ssh]] key with [[Powershell]] `ssh-keygen -t ed25519 -C "your_email@example.com"`
+# run in [[Powershell]] `Get-Content -Path $HOME\.ssh\id_ed25519.pub | Set-Clipboard` to save your public key to the clipboard
+# Go to `https://github.com/settings/ssh/new` and add the content of your public key file
+# Restart all terminal sessions, if `HOME` [[Environmental variable]] is set correctly [[Git]] should start working with the new [[Ssh]] key (it will look for `%HOME%/.ssh/id_rsa` file)

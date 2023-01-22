@@ -1,0 +1,13 @@
+created: 20220103205540014
+creator: AndreiD049
+modified: 20220724154724081
+modifier: AndreiD049
+tags: Javascript transferred
+title: Json modules
+type: text/vnd.tiddlywiki
+
+[[Source|https://nodejs.org/docs/latest-v15.x/api/esm.html#esm_json_modules]]
+
+Currently, JSON modules are available only from [[Common js modules]].
+
+To be able to use JSON modules in [[Es modules]], you need to either use `fs` module and load them directly, or use `--experimental-json-modules` when running Node.js

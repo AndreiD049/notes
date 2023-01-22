@@ -1,0 +1,12 @@
+created: 20220102172342322
+creator: AndreiD049
+modified: 20220723153608428
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Add icons to chrome extension
+type: text/vnd.tiddlywiki
+
+!! Add icons
+
+# Add images of different sizes into the project folder. (16, 32, 48, 128).
+# Add `default_icon` property to [[manifest|Creating a manifest]]

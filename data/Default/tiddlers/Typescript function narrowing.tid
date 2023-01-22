@@ -1,0 +1,76 @@
+created: 20220102124813681
+creator: AndreiD049
+modified: 20220724125436003
+modifier: AndreiD049
+tags: Typescript transferred
+title: Typescript function narrowing
+type: text/vnd.tiddlywiki
+
+!! Type guards
+
+Narrowing happens in [[Typescript]] when we have multiple possible types, and we narrow the possibilities by checking for concrete types:
+
+```ts
+	function narrow(a: string | number) {
+		if (typeof a === "string") {
+			// here typescript knows that a is a string
+			return a.toLowerCase();
+		}
+		// here, a is number for sure.
+		return a + 2;
+	}
+```
+
+The `if (typeof ...)` check is also called a `type guard`.
+
+Besides `typeof` there is also `insanceof` narrowing, used for objects constructed with new.
+
+!! Equality narrowing
+
+You can also narrow types by comparing them:
+
+```ts
+function test(a: string | number, b: string | boolean) {
+	if (a === b) {
+		// here, because a is equal to b,
+		// we know that their types are the same
+		// and their only common type is string
+		// so both a and b are strings
+		return a.toLowerCase() + b.toLowerCase();
+	}
+	// ...
+}
+```
+
+You can use any kind of equality checks `===`, `!==`, `==`, `!=` etc.
+
+!! `in` narrowing
+
+[[Javascript]] `in` keyword can be used to narrow types:
+
+```ts
+type Bird = { fly: () => void };
+type Fish = { swim: () => void };
+
+function doSomething(animal: Bird | Fish) {
+	if ("fly" in animal) {
+		// Here we have a Bird for sure
+		animal.fly();
+	} else {
+		animal.swim();
+	}
+}
+```
+
+!! type predicates
+
+Functions with special return types to help narrowing. See [[Typescript type predicates]].
+
+!! discriminating unions
+
+See [[Discriminating unions]]
+
+!! `never` type
+
+When narrowing, if all types were already excluded, value is assigned the `never` type.
+Also, functions that throw an exception have the `never` type

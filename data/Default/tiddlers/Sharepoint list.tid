@@ -1,0 +1,44 @@
+created: 20220102175120287
+creator: AndreiD049
+modified: 20220723200839359
+modifier: AndreiD049
+tags: Sharepoint transferred
+title: Sharepoint list
+type: text/vnd.tiddlywiki
+
+When a web part is added to a site, we can first make sure that required lists are created so the user doesn't need to create them manually.
+
+A convenient way to do this is when property pane is opened:
+
+```typescript
+  protected async loadPropertyPaneResources(): Promise<void> {
+    return import(
+      /* webpackChunkName: 'MyWebPart' */
+      './property/PropertyComponent'
+    ).then(component => {
+      // Ensure all lists and fields are created
+      EnsureAllCreated();
+    });
+  }
+```
+
+See [[Sharepoint fields]].
+
+!! Ensure a list exists
+
+```js
+const listEnsureResult = await sp.web.lists.ensure("My List");
+
+// check if the list was created, or if it already existed:
+if (listEnsureResult.created) {
+    console.log("My List was created!");
+} else {
+    console.log("My List already existed!");
+}
+
+// work on the created/updated list
+const r = await listEnsureResult.list.select("Id")();
+
+// log the Id
+console.log(r.Id);
+```

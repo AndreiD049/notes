@@ -1,0 +1,18 @@
+created: 20220102120709200
+creator: AndreiD049
+modified: 20220723192844846
+modifier: AndreiD049
+tags: Typescript transferred
+title: Typescript config file
+type: text/vnd.tiddlywiki
+
+!! tsconfig.json
+
+Same as [[Package json]] for typescript. Specifies options for [[Typescript]] compilation.
+
+!! tsconfig most useful commands
+
+* `target` will specify to which features in your code will get downgraded. For example `${temlate} string` might be downgraded to string concatenation. Using `es6` is a strong choice, but all depends.
+* `module` - which module type is generated? [[Common js modules]], [[Es modules]], [[Amd modules]], [[Umd modules]]
+* `noImplicitAny` - will throw an error in all places where type is `any` or is implicitly made `any`.
+* `strictNullChecks` - helps to handle `null` and `undefined`, especially in cases where a value was not initialized and still used

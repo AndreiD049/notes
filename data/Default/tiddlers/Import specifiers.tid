@@ -1,0 +1,15 @@
+created: 20220103205001793
+creator: AndreiD049
+modified: 20220723194152140
+modifier: AndreiD049
+tags: Javascript transferred
+title: Import specifiers
+type: text/vnd.tiddlywiki
+
+Import specifiers represent the strings that can be used within [[Es modules]] (after `from` keywork in `import` statement), or with `import()` in [[Dynamic import]]
+
+There are 3 types of import specifiers:
+
+# //Relative specifiers// - like `./some-package/index.js`
+# //Bare specifiers// - like `fs` or `axios`
+# //Absolute specifiers// - like `file:///opt/file/example.js`

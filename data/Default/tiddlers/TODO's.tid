@@ -1,0 +1,11 @@
+created: 20220510172606001
+modified: 20220723204704270
+tags: transferred
+title: TODO's
+type: text/vnd.tiddlywiki
+
+!!! Here are all the items where i still need to do something
+ 
+<$list filter="[!is[system]has[todo]]" counter="idx">
+	<<idx>>. <$link><<currentTiddler>></$link> - {{!!todo}} <br>
+</$list>

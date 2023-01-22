@@ -1,0 +1,11 @@
+created: 20220120195037548
+creator: AndreiD049
+modified: 20220120195119220
+modifier: AndreiD049
+tags: 
+title: Sharepoint list Json formatting
+type: text/vnd.tiddlywiki
+
+Visual parts of a list field can be formatted using Json formatting:
+
+See: https://docs.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-syntax-reference

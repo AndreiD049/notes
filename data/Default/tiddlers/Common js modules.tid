@@ -1,0 +1,91 @@
+created: 20220103200934240
+creator: AndreiD049
+modified: 20220723192541180
+modifier: AndreiD049
+tags: transferred
+title: Common js modules
+type: text/vnd.tiddlywiki
+
+[[Common js modules]] are the modules using `require` function. This is the native mechanism used in Node.js. (at least it was before [[Es modules]] appeared).
+Each file is considered a module. Objects like `require`, `module` and others are available thanks to [[Module wrapping]].
+
+!! Examples
+
+```js
+const circle = require('./circle.js');
+console.log(`The area of a circle of radius 4 is ${circle.area(4)}`);
+```
+
+On the first line, `foo.js` loads the module `circle.js` that is in the same directory as `foo.js`.
+
+Here are the contents of `circle.js`:
+
+```js
+const { PI } = Math;
+
+exports.area = (r) => PI * r ** 2;
+
+exports.circumference = (r) => 2 * PI * r;
+```
+
+The module `circle.js` has exported the functions `area()` and `circumference()`. Functions and objects are added to the root of a module by specifying additional properties on the special `exports` object.
+
+Variables local to the module will be private, because the module is wrapped in a function by Node.js (see [[module wrapper|https://nodejs.org/docs/latest-v15.x/api/modules.html#modules_the_module_wrapper]]). In this example, the variable `PI` is private to `circle.js`.
+
+The `module.exports` property can be assigned a new value (such as a function or object).
+
+Below, `bar.js` makes use of the `square` module, which exports a Square class:
+
+```js
+const Square = require('./square.js');
+const mySquare = new Square(2);
+console.log(`The area of mySquare is ${mySquare.area()}`);
+```
+
+The `square` module is defined in `square.js`:
+
+```js
+// Assigning to exports will not modify module, must use module.exports
+module.exports = class Square {
+  constructor(width) {
+    this.width = width;
+  }
+
+  area() {
+    return this.width ** 2;
+  }
+};
+```
+
+The module system is implemented in the `require('module')` module.
+
+!! The `.mjs` extension
+
+It is not possible to `require()` files that have the `.mjs` extension. Attempting to do so will throw [[an error|https://nodejs.org/dist/latest-v16.x/docs/api/modules.htmlerrors.html#err_require_esm]]. The `.mjs` extension is reserved for [[Es modules]] which cannot be loaded via `require()`.
+
+!! File modules, and their resolution strategy
+
+If exact file name is not found. Node.js will attempt to find a file with `.js`, `.json`, or `.node` extensions.
+Also, depending on path prefix:
+
+- `/` means path to the module is absolute
+- `./`, `../` etc. means path to the module is relative
+- if there is no prefix, it's either a core module, or it will be looked up in `node_modules` folder
+  If none of above work, `require` will throw a `MODULE_NOT_FOUND` exception.
+
+!! Directory modules
+
+In order for [[Node js]] to be able to recognize a folder as a module, it should meet any of below criteria:
+
+* Folder should have a `package.json` with a `main` field in it. In below case, `require('./my-module')` will load and run `./my-module/lib/my-module.js`
+
+```json
+{
+  "name": "my-module",
+  "main: "./lib/my-module.js"
+}
+```
+
+- In case no [[Package json]] is found, Node.js will look for `index.js` or `index.node` files. More info in [[Node js packages]]
+
+For more details how require works see [[Require pseudo code]]

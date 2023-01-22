@@ -1,0 +1,13 @@
+created: 20220102171355268
+creator: AndreiD049
+modified: 20220723185751139
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Run extension in browser
+type: text/vnd.tiddlywiki
+
+!! Load extension in the browser
+
+# Open link in chrome `chrome://extensions`
+# Click `Developer mode`
+# Click `Load unpacked` and select the project folder

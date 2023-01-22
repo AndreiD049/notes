@@ -1,0 +1,11 @@
+created: 20220115143129327
+creator: AndreiD049
+modified: 20220724170812787
+modifier: AndreiD049
+tags: transferred
+title: Projects
+type: text/vnd.tiddlywiki
+
+!! Projects
+
+<$list filter="[all[]tag[Project]]" />

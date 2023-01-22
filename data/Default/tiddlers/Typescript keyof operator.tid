@@ -1,0 +1,26 @@
+created: 20220102122303820
+creator: AndreiD049
+modified: 20220102122341598
+modifier: AndreiD049
+tags: Typescript
+title: Typescript keyof operator
+type: text/vnd.tiddlywiki
+
+The `keyof` operator will create a `literal union type` consisting of all properties of the type passed to it.
+
+```ts
+interface Person {
+	name: string;
+	age: number;
+};
+
+type PersonProperties = keyof Person; // type is "name" | "age"
+```
+
+It is useful when working with generics:
+
+```ts
+function getProp<O, P extends keyof O>(obj: O, prop: P): O[P]  {
+	return obj[prop];
+}
+```

@@ -1,0 +1,72 @@
+created: 20220102173215036
+creator: AndreiD049
+modified: 20220724165240071
+modifier: AndreiD049
+tags: [[Data Structure]] transferred
+title: Piece table
+type: text/vnd.tiddlywiki
+
+!! Piece table
+
+Piece table is a data structure convenient for implementing text editors or similar structures.
+
+Piece table is an append only data structure, meaning it doesn't delete anything from content that was ever inserted.
+
+It consists of 3 pieces:
+
+* original buffer (readonly)
+* add buffer (where we append what user has inserted)
+* array of pieces, that keeps track of which pieces from which buffers are currently shown
+
+```json
+{
+	"original": "the quick brown fox\njumped over the lazy dog",
+	"add": "",
+	"pieces": [Piece(start=0, length=44, source="original")],
+}
+```
+
+For example we have the text `Hello world`.
+Our piece table would look like this:
+
+```json
+{
+	"original": "Hello world",
+	"add": "",
+	"pieces": [Piece(start=0, length=11, source="original")],
+}
+```
+
+Say we modify the string by adding a `!` at the end, so now it's `Hello world!`
+
+```json
+{
+	"original": "Hello world",
+	"add": "!",
+	"pieces": [
+		Piece(start=0, length=11, source="original"),
+		Piece(start=0, length=1, source="add"),
+	],
+}
+```
+
+Notice what we did: we appended `!` to the add buffer, and added another piece to the array, that points to this character.
+
+What if we add something to the middle of the text?
+Say we modified the original string like this `Hello f***ing world` where we added the string ` f***ing` (notice the space at the beginning)
+
+```json
+{
+	"original": "Hello world",
+	"add": " f***ing",
+	"pieces": [
+		Piece(start=0, length=5, source="original"),
+		Piece(start=5, length=8, source="add"),
+		Piece(start=5, length=6, source="original")
+	],
+}
+```
+
+Notice that now we split the original piece into 2 parts and add the new content in the middle.
+
+Same thing happens with deletion, we only need to adjust the pieces to point to the content that should be visible.

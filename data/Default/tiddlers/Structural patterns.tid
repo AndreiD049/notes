@@ -1,0 +1,13 @@
+created: 20220103213142233
+creator: AndreiD049
+modified: 20220103213203412
+modifier: AndreiD049
+tags: Patterns
+title: Structural patterns
+type: text/vnd.tiddlywiki
+
+!! Structural patterns
+
+Structural patterns are the ones working with object's interfaces, adapting them and helping modifying them to my needs
+
+[[Decorator pattern]]

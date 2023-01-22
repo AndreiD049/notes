@@ -1,0 +1,26 @@
+created: 20220102124720137
+creator: AndreiD049
+modified: 20220724125423722
+modifier: AndreiD049
+tags: Typescript transferred
+title: Typescript type predicates
+type: text/vnd.tiddlywiki
+
+Type predicates in [[Typescript]] are functions that help with type [[Typescript function narrowing]].
+It has some special syntax.
+
+```ts
+function isBird(animal: Fish | Bird): animal is Bird {
+	return (animal as Bird).fly !== undefined;
+}
+```
+
+This special syntax `animal is Bird` helps type [[narrowing|Typescript function narrowing]]:
+
+```ts
+function test(animal: Bird | Fish) {
+	if (isBird(animal)) {
+		// here animal is definetly Bird
+	}
+}
+```

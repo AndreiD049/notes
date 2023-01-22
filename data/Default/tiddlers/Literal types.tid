@@ -1,0 +1,22 @@
+created: 20220102122136415
+creator: AndreiD049
+modified: 20220724155415171
+modifier: AndreiD049
+tags: Typescript transferred
+title: Literal types
+type: text/vnd.tiddlywiki
+
+Literal types are types consisting of literal values (obviously).
+
+"""
+Example:
+`const value = "hello"`, it's type will be `"hello"`.
+Or we can write `let value: "hello" = "hello"`. Then if i try to assign any other value to this variable, it will complain.
+Very useful together with [[union types|Union types in typescript]] to declare types that can have only certain values. The [[Typescript keyof operator]] will produce a `literal union type` of all object's properties
+"""
+
+```ts
+type direction = "up" | "down" | "left" | "right"; 
+```
+
+You can have `number` literal types too (`1 | 2 | 3 | 4`).

@@ -1,0 +1,74 @@
+created: 20220102121800079
+creator: AndreiD049
+modified: 20220102180534290
+modifier: AndreiD049
+tags: Typescript
+title: Typescript 'object' type
+type: text/vnd.tiddlywiki
+
+Object types are defined as simple objects with properties and their type as values. Example: `{ person: string, age: number }` will define a type of object having properties `person` or type `string` and `age` of type `number`.
+
+Object types can be specified:
+
+1. `anonymous`ly: declared in function definition for example
+
+```ts
+function obj(config: {path: string, count: number});
+```
+
+2. via `interface`
+
+```ts
+interface MyType {
+	path: string;
+	count: number;
+};
+
+function obj(config: MyType);
+```
+
+3. via `type aliases`: see [[Typescript]]
+
+```ts
+type MyTypeAlias = {
+	path: string;
+	count: number;
+};
+
+function obj(config: MyTypeAlias);
+```
+
+!! Property modifiers
+
+There are 2 property modifiers: `optional` and `readonly`. (See [[Typescript property modifiers]])
+
+!! Object types inheritance
+
+Object types can be extended same as classes. See [[Extending types in typescript]]
+
+!! Index properties
+
+If property names are not known, index properties can be used:
+
+```ts
+interface StringArray {
+	[index: number]: string;
+}
+```
+
+!! Tuple types
+
+Another type is tuple. Syntax for tuple is `[string, number]` (example of tuple with 2 elements, `string` and `number`). More info in [[Typescript tuple type]]
+
+!! keyof operator
+
+`keyof` operator simply returns a `literal union type` with all properties from the passed type. See [[Typescript keyof operator]]
+
+!! Indexed access types
+
+You can access types of object type's properties by using [[Typescript indexed access]]
+
+!! Classes
+
+Object types are somewhat similar to [[Typescript classes]] except few features
+

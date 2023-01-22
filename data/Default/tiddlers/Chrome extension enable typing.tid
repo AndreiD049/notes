@@ -1,0 +1,21 @@
+created: 20220102172313011
+creator: AndreiD049
+modified: 20220723182809563
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Chrome extension enable typing
+type: text/vnd.tiddlywiki
+
+!! Enable types in vscode
+
+To enable types, create a file `jsconfig.json` in the root directory, and add:
+
+```json
+{
+	"typeAcquisition": {
+		"include": ["chrome"]
+	}
+}
+```
+
+For this, your directory will need to be initialized as `npm package`.

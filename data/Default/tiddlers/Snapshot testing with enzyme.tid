@@ -1,0 +1,21 @@
+created: 20220328193013493
+modified: 20220328193203802
+tags: Javascript
+title: Snapshot testing with enzyme
+type: text/vnd.tiddlywiki
+
+In order to test a component using snapshots, <<copy-text "npm i -D enzyme-to-json">>. It ensures that snapshot is saving only component's own markup, without unnecesary things from enzyme itself.
+
+Example:
+
+```js
+import * as React from "react";
+import { shallow } from "enzyme";
+import toJson from "enzyme-to-json";
+import { CountDown } from "./CountDown";
+
+test("should render correctly", () => {
+  const wrapper = shallow(<CountDown startTime={30} />).toJSON();
+  expect(toJson(wrapper)).toMatchSnapshot();
+});
+```

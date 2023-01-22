@@ -1,0 +1,38 @@
+created: 20220102115744137
+creator: AndreiD049
+modified: 20220102115757614
+modifier: AndreiD049
+tags: Postgres
+title: Transactions in postgres
+type: text/vnd.tiddlywiki
+
+!! Transactions in Postgres
+
+Transactions in SQL are defined by a block of `BEGIN;` to `COMMIT;`
+
+```sql
+-- transaction block
+BEGIN;
+DELETE FROM items WHEN name = 'bad';
+UPDATE people SET age = age + 1;
+-- ... many more operations
+COMMIT;
+```
+
+If i decide to cancel the transaction in the middle, i can use `ROLLBACK;` command to do it.
+
+You can rollback a part of operations through use of savepoints:
+
+```sql
+BEGIN;
+UPDATE accounts SET balance = balance - 100.00
+    WHERE name = 'Alice';
+SAVEPOINT my_savepoint;
+UPDATE accounts SET balance = balance + 100.00
+    WHERE name = 'Bob';
+-- oops ... forget that and use Wally's account
+ROLLBACK TO my_savepoint;
+UPDATE accounts SET balance = balance + 100.00
+    WHERE name = 'Wally';
+COMMIT;
+```

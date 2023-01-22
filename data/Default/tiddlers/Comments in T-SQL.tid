@@ -1,0 +1,10 @@
+created: 20220510161822137
+modified: 20220723190325906
+tags: T-SQL transferred
+title: Comments in T-SQL
+type: text/vnd.tiddlywiki
+
+For comments in T-SQL, use:
+
+# `-- This is a single line comment`
+# `/ this is a multiline comment /`

@@ -1,0 +1,13 @@
+created: 20211228210521329
+creator: AndreiD049
+modified: 20211228211302164
+modifier: AndreiD049
+tags: 
+title: Rationale of a pattern
+type: text/vnd.tiddlywiki
+
+This idea is presented in [[Patterns of enterprise applications architecture]]
+
+Patterns describe problems that are reoccurring very often in some field, and then explain you the only ''the core'' of the solution for those problems. This means you can apply the same pattern many times in practice, and never repeat yourself.
+
+In order to use the patterns, the first thing that needs to be done is understanding the problem they are aiming to solve. Then, when you encounter this problem, you can always look the pattern up and understand the `solution` it offers.

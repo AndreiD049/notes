@@ -1,0 +1,17 @@
+created: 20220102131013622
+creator: AndreiD049
+modified: 20220724141740769
+modifier: AndreiD049
+tags: Typescript transferred
+title: Function parameter destructuring in typescript
+type: text/vnd.tiddlywiki
+
+When object parameters are passed to functions, those parameters can be destructured:
+
+```ts
+function fromObj({name, age}: {name: string, age: number}) {
+	// use the paramters
+}
+
+fromObj({name: "Andrei", age: 27});
+```

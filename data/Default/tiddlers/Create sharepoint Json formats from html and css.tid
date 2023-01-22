@@ -1,0 +1,11 @@
+created: 20220120193951729
+creator: AndreiD049
+modified: 20220723200931381
+modifier: AndreiD049
+tags: transferred
+title: Create sharepoint Json formats from html and css
+type: text/vnd.tiddlywiki
+
+To create JSON format for a [[Sharepoint list]] from html and css, use:
+
+https://pnp.github.io/List-Formatting/tools/html-formatter-generator/

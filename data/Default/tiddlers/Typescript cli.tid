@@ -1,0 +1,11 @@
+created: 20220102120202251
+creator: AndreiD049
+modified: 20220102121026631
+modifier: AndreiD049
+tags: Typescript
+title: Typescript cli
+type: text/vnd.tiddlywiki
+
+Typescript ''CLI'' is used to compile the sources or [[init project|Init typescript project]]
+Once project is set, you can start writing typescript code and [[Compile typescript]].
+For ease of development, you can also [[watch|Watch typescript changes]] for changes

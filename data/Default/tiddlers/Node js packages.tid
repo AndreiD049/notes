@@ -1,0 +1,19 @@
+created: 20220103205640869
+creator: AndreiD049
+modified: 20220724163904367
+modifier: AndreiD049
+tags: Javascript transferred
+title: Node js packages
+type: text/vnd.tiddlywiki
+
+!! Definition
+
+A package is a folder tree that contains a [[Package json]] file at it's root. A package consists of all files and directories in it except:
+
+* Folders that contain a [[Package json]] themselves.
+* Folders that are named `node-modules`
+
+!! Determine the module system
+
+* [[Node js]] will treat a package as [[es module|Es modules]] according to [[Enabling es modules]]
+* [[Node js]] will treat as [[Common js modules]] everything else, and it's also possible to specify explicitly. See [[Explicit commonjs rules]].

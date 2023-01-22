@@ -1,0 +1,22 @@
+created: 20220102124452131
+creator: AndreiD049
+modified: 20220724141440756
+modifier: AndreiD049
+tags: Typescript transferred
+title: Extending types in typescript
+type: text/vnd.tiddlywiki
+
+Extending types works the same way as with classes:
+
+```ts
+interface Person {
+	name: string;
+	age: number;
+}
+
+interface Employee extends Person {
+	salary: number;
+}
+```
+
+`extend`ing multiple types is also possible.

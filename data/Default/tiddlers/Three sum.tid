@@ -1,0 +1,75 @@
+created: 20220102170745161
+creator: AndreiD049
+modified: 20220102170901909
+modifier: AndreiD049
+tags: Algorithms
+title: Three sum
+type: text/vnd.tiddlywiki
+
+Source: https://leetcode.com/problems/3sum/
+
+```text
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+ 
+
+Example 1:
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+
+Example 2:
+Input: nums = []
+Output: []
+
+Example 3:
+Input: nums = [0]
+Output: []
+```
+
+!! Solution
+
+The solution to this puzzle is to reduce the problem to [[Two sum]]. So one way to solve it, is loop through each number, and for the rest of the array find the two sum. But this doesn't help us with duplicates.
+Instead, what we can do, we can sort the array first, and then use the same principle to find the two-sum number.
+
+So, for example we have sorted array `[-1, 0, 1, 2]`.
+
+Loop 1. `n = -1`. We need to find out if in the remaining array `[0, 1, 2]` contains values such that `a + b = n * -1` or `a + b = 1`.
+
+When we find a potential candidates, we check whether first and second elements are not the same as previous time (maintain 2 variables to check this)
+
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+        print(nums)
+        prevA = inf
+        prevB = inf
+        # Start looping
+        for i in range(len(nums)):
+            if nums[i] == prevA:
+                continue
+            # Find the two-sum, which is opposite of current num
+            target = nums[i] * -1
+            l = i + 1
+            r = len(nums) - 1
+            while l < r:
+                sum = nums[l] + nums[r]
+                if sum == target:
+                    # Check if we already had this B value
+                    if nums[i] == prevA and nums[l] == prevB:
+                        l += 1
+                        continue
+                    prevB = nums[l]
+                    prevA = nums[i]
+                    res.append([nums[i], nums[l], nums[r]])
+                    r -= 1
+                elif sum > target:
+                    r -= 1
+                else:
+                    l += 1
+        return res
+                    
+```

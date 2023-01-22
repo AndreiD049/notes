@@ -1,0 +1,13 @@
+created: 20221219070642213
+modified: 20221219070900661
+tags: T-SQL Database
+title: Looping in SQL
+type: text/vnd.tiddlywiki
+
+As mentioned in [[this|https://stackoverflow.com/questions/29129649/while-loop-in-sql-server-2008-iterating-through-a-date-range-and-then-insert]] stackoverflow responce, looping in SQL should be the last resort, as SQL is a set based language.
+
+The answer suggests below articles for more information on subject:
+
+* [[Generate a set or sequence without loops – part 1|http://sqlperformance.com/2013/01/t-sql-queries/generate-a-set-1]]
+* [[Generate a set or sequence without loops – part 2|http://sqlperformance.com/2013/01/t-sql-queries/generate-a-set-2]]
+* [[Generate a set or sequence without loops – part 3|http://sqlperformance.com/2013/01/t-sql-queries/generate-a-set-3]]

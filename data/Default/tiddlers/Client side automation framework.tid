@@ -1,0 +1,27 @@
+created: 20220115143241265
+creator: AndreiD049
+modified: 20220723190111790
+modifier: AndreiD049
+tags: Project transferred
+title: Client side automation framework
+type: text/vnd.tiddlywiki
+
+!! Description & Rationale
+
+The framework should combine different toold that will make in-browser scripting and automation easier.
+
+For example: if i often need to do some actions on the web that require many repetittive actions, i could write a script to open some iframes and do all those actions automatically in parallel (and saving time and my sanity)
+
+The framework should make this kind of scripts easier to write and execute.
+
+!! Executing the scripts
+
+For a proof of concept, i think running the scripts via a chrome extension like [[Tampermonkey|https://www.tampermonkey.net]] is a viable solution.
+
+Later (and if necessary), a standalone extension can be made.
+
+!! Components
+
+* Input & Data collection components -- A lot of scrips require some input data before being executed. There should be an easy way to insert data (mainly from excel)
+* Scripting utilities -- it should be easy and convenient to select and perform actions on web elements. There should be fluent api to make scripts readable and easy to write. For example, selecting an element by locator, by text, by attribute, clicking an element, sending keystrokes to elements, etc.
+* Script execution context -- for example if i want to create multiple locations and doing it all in 1 window would take too much time. There should be a mechanism to split the repetitive work over some pull of iframes.

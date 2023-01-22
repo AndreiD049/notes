@@ -1,0 +1,12 @@
+created: 20220102121256585
+creator: AndreiD049
+modified: 20220102121330993
+modifier: AndreiD049
+tags: Typescript
+title: Typescript primitive types
+type: text/vnd.tiddlywiki
+
+!! Typescript primitives
+
+[[Typescript]] and [[Javascript]] primitives are: `number`, `string`, `boolean`
+It is also possible to use the uppercase variant: `Number`, `String`, `Boolean`, but those are very special cases that will very rarely appear.

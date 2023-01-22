@@ -1,0 +1,16 @@
+created: 20220531175431149
+modified: 20220723175138254
+source: https://docs.microsoft.com/en-us/sql/t-sql/functions/aggregate-functions-transact-sql?view=sql-server-ver16
+tags: T-SQL transferred
+title: Aggregate functions
+type: text/vnd.tiddlywiki
+
+Aggregate functions are the ones that take multiple values, and return a single value.
+Examples of aggregate functions:
+
+* MAX
+* MIN
+* AVG
+* COUNT
+
+Source: {{!!source}}

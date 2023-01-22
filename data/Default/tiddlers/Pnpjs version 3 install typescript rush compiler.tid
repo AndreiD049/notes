@@ -1,0 +1,18 @@
+created: 20220427164453786
+modified: 20220724165532908
+tags: Sharepoint transferred
+title: Pnpjs version 3 install typescript rush compiler
+type: text/vnd.tiddlywiki
+
+In order for pnp/js v3 to work, you need a new version of typescript-rush-compiler:
+
+Steps:
+
+# <<copy-text "npm uninstall @microsoft/rush-stack-compiler-3.?">> - replace `?` with your version
+# <<copy-text "npm i @microsoft/rush-stack-compiler-4.2">>
+# Update tsconfig.json to extend the 4.2 config: `"extends": "./node_modules/@microsoft/rush-stack-compiler-4.2/includes/tsconfig-web.json"`
+# Add this line in your `gulpfile.js`
+
+```js
+build.tslintCmd.enabled = false;
+```

@@ -1,0 +1,22 @@
+created: 20220216100709598
+modified: 20220724165939884
+tags: transferred
+title: Powershell add command line arguments
+type: text/vnd.tiddlywiki
+
+[[Powershell]] add command line arguments
+
+```powershell
+[CmdletBinding()]
+param (
+    [Parameter()]
+    [string]
+    $paths,
+    [Parameter()]
+    [string]
+    $destination
+)
+
+# Logic
+Write-Output "$paths and $destination"
+```

@@ -1,0 +1,54 @@
+created: 20220102172256850
+creator: AndreiD049
+modified: 20220723185636116
+modifier: AndreiD049
+tags: Javascript transferred
+title: Service worker
+type: text/vnd.tiddlywiki
+
+!! What are Service workers
+
+Service workers are a special kind of [[web-workers|https://developer.mozilla.org/en-US/docs/Web/API/Worker]].
+Service workers are [[Javascript]] scripts that run in the browser's background and are not linked to a particular web page.
+Often usage of a service worker involves a cache and enabling offline functionality, since service workers can intercept network request and interrupt/modify them.
+Service workers can't access the DOM, since they are not linked to a particular web page or tab, but they can communicate with the page by sending messages.
+If service workers need access to a persistent storage, they can use [[Indexdb]]
+
+!! Life cycle
+
+!!! Why life cycle is important
+
+Life cycle is important especially in situations when you want to update the service worker with a new version.
+
+# Provide seamless offline experience
+# Make sure a new version of the service worker can download itself and install itself without interrupting the existing one
+# Make sure that each page which is in scope is controlled by the same service worker
+# Make sure no two different versions of service workers are running in the same session
+
+!!! Download
+
+Download phase happens the first time when you call `navigator.serviceWorker.register`. It will try to download all scripts and static files. If any of those fail, the service worker will not be installed and will retry it next time.
+
+!!! Install
+
+After a successful download, service worker get's an `install` event. Install event will be called only once for each service worker, and this is the place to setup all caches and dependencies. If `install` fails, it will never be able to control the clients (see [[google docs|https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install]])
+
+!!! Activate
+
+`activate` is the state when service worker becomes functional. But it will not control the client the first time it activated after `register`, because initially page loaded without the service worker being installed. To start controlling, page needs to be loaded with service worker already being installed (in other words, refresh the page). (You could start controlling the client without refreshing the page, see [[clients.claim()|https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#clientsclaim]])
+
+!! Life cycle during update
+
+When updating a service worker the life cycle is similar, but with small nuances
+
+!!! Download the updated version
+
+The new version will be downloaded if at least a byte of a difference in the service worker or it's modules is spotted.
+
+!!! Installing the update
+
+Then the service worker is installed (the old version is still running). After installation the updated service worker is put in a `waiting` state. This means that old service worker is still running, and will be running until there is at least one page controller by it opened. This should prevent 2 different service workers controlling the same page. (you can [[skip|https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase]] the waiting phase)
+
+!!! Activating the update
+
+One you close all your tabs and open it again, the new service worker will be `activated`.

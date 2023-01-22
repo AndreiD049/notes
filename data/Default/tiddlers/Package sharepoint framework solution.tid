@@ -1,0 +1,18 @@
+created: 20220102174746085
+creator: AndreiD049
+modified: 20220724164805271
+modifier: AndreiD049
+tags: Sharepoint transferred
+title: Package sharepoint framework solution
+type: text/vnd.tiddlywiki
+
+Project metadata is stored in `package-solution.json`
+
+To package the project use commands:
+
+# <<copy-text "gulp clean">>
+# <<copy-text "gulp build">>
+# <<copy-text "gulp bundle --ship">>
+# <<copy-text "gulp package-solution --ship">>
+
+`--ship` flag is needed because by default all your js/css/media files will not be packaged and will be served from localhost.

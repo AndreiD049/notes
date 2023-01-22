@@ -1,0 +1,33 @@
+created: 20220422211436971
+modified: 20220422211611980
+tags: Css
+title: Sass use mixin
+type: text/vnd.tiddlywiki
+
+In [[Scss]], a mixing is like a function for css (see [[source|https://sass-lang.com/documentation/at-rules/mixin]])
+
+Mixins are used with `@include` at-rule.
+
+```scss
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  li {
+    display: inline-block;
+    margin: {
+      left: -2px;
+      right: 2em;
+    }
+  }
+}
+
+nav ul {
+  @include horizontal-list;
+}
+```

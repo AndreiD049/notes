@@ -1,0 +1,27 @@
+created: 20220103203118593
+creator: AndreiD049
+modified: 20220103204543770
+modifier: AndreiD049
+tags: Javascript Recipe
+title: Setup webpack webserver
+type: text/vnd.tiddlywiki
+
+Add the `devServer` option to [[Webpack]] config
+
+```js
+devServer: {
+	static: {
+		directory: path.join(__dirname, 'public'),
+	},
+	compress: true,
+	port: 7700,
+}
+```
+
+In [[package.json|Package json]] scripts, add:
+
+```json
+// scripts: {
+	"dev": "webpack serve"
+// ...
+```

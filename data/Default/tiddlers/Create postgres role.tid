@@ -1,0 +1,23 @@
+created: 20220102114016155
+creator: AndreiD049
+modified: 20220723195445480
+modifier: AndreiD049
+tags: Postgres transferred
+title: Create postgres role
+type: text/vnd.tiddlywiki
+
+In a fresh postgres installation, you cannot just connect to database from your normal user (ex. rast999).
+Instead, you will need first to create a role (aka user) in postgres for it.
+
+To do this:
+
+- login as user `postgres`: `sudo su postgres`
+- run `psql`, then `CREATE ROLE name` or just `createuser name` from command line
+
+Note: This will create a simple role without any privileges.
+
+To grant role privileges you can:
+
+Specify them at creation time - `CREATE ROLE rast999 CREATEDB CREATEROLE LOGIN REPLICATION;`
+
+In order to check which users are currently created, see [[List users in postgres]]

@@ -1,0 +1,16 @@
+created: 20220102122903483
+creator: AndreiD049
+modified: 20220724164004176
+modifier: AndreiD049
+tags: Typescript transferred
+title: Null assertion operator
+type: text/vnd.tiddlywiki
+
+Typescript `null-assertion operator` (also called the `postfix ! operator`) helps assuring [[Typescript]] that value is not null.
+This does absolutely nothing at runtime, so you have to be sure value is really not null.
+
+```ts
+function get(obj: { value: number } | null) {
+	return obj!.value; // because of '!', typescript believes me it's not null
+}
+```

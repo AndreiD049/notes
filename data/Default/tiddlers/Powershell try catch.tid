@@ -1,0 +1,20 @@
+created: 20220413131954635
+modified: 20220724170349379
+tags: Recipe transferred
+title: Powershell try catch
+type: text/vnd.tiddlywiki
+
+Source: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.2
+
+```powershell
+try {
+   $wc = new-object System.Net.WebClient
+   $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
+}
+catch [System.Net.WebException],[System.IO.IOException] {
+    "Unable to download MyDoc.doc from http://www.contoso.com."
+}
+catch {
+    "An error occurred that could not be resolved."
+}
+```

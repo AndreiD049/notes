@@ -1,0 +1,10 @@
+created: 20220510170938321
+modified: 20220724125916600
+tags: T-SQL transferred
+title: Documentation resources
+type: text/vnd.tiddlywiki
+
+Some documentation resources and courses on [[T-SQL]] (and SQL in general):
+
+# Official Microsoft documentation - https://docs.microsoft.com/sql
+# Microsoft reference on T-SQL specifically - https://docs.microsoft.com/en-us/sql/t-sql

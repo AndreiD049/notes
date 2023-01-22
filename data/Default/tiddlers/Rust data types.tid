@@ -1,0 +1,24 @@
+created: 20220110184346609
+creator: AndreiD049
+modified: 20220110185659407
+modifier: AndreiD049
+tags: Rust
+title: Rust data types
+type: text/vnd.tiddlywiki
+
+Rust has 2 types of data types: `Scalar` and `Compound`
+
+`Scalar` data types are primitive ones, representing one single value.
+
+* Integer
+* Float
+* Boolean
+* Character
+* Unit `()` type (see [[Unit type]])
+
+`Compound` data types combine multiple scalar types into one
+
+* Tuple -- `let x = (1, 2, 3)`
+* Array -- `let y = [1, 2, 3]`
+
+Those values sizes are known at compile time, so they are stored on the stack

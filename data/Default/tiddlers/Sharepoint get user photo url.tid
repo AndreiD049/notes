@@ -1,0 +1,13 @@
+created: 20220320082307655
+modified: 20220320082432348
+tags: Sharepoint
+title: Sharepoint get user photo url
+type: text/vnd.tiddlywiki
+
+In Sharepoint, if you want to show user's photo, you can use following url:
+
+```
+/_layouts/15/userphoto.aspx?AccountName=mail@domain.com&Size=L
+```
+
+Possible sizes: `M`, `L`, `S`

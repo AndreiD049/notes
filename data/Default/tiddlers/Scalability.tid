@@ -1,0 +1,10 @@
+created: 20211228212215647
+creator: AndreiD049
+modified: 20211228212252422
+modifier: AndreiD049
+title: Scalability
+type: text/vnd.tiddlywiki
+
+Source: [[Patterns of enterprise applications architecture]]
+
+Scalability can be horizontal (when you just add more hardware/servers), or vertical (when you upgrade your current server/code). Often it's more desirable to build the system to be horizontally scalable, because adding new hardware is usually cheaper than adding more people.

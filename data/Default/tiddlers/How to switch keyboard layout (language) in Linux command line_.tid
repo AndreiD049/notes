@@ -1,0 +1,18 @@
+created: 20221224091056391
+modified: 20221224091221125
+tags: Linux Recipe
+title: How to switch keyboard layout (language) in Linux command line?
+type: text/vnd.tiddlywiki
+
+You can use `setxkbmap`:
+
+```
+setxkbmap -layout us,de
+setxkbmap -option 'grp:alt_shift_toggle'
+```
+Just change the keyboard layouts `us,de` to what ever you prefer. If you want i3 to run these commands on startup, just add them to your config file `~/.i3/config` and prepend `exec`.
+
+```
+exec "setxkbmap -layout us,de"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
+```

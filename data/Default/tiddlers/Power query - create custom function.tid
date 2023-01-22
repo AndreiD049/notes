@@ -1,0 +1,17 @@
+created: 20220426104529673
+modified: 20220724165828968
+tags: transferred
+title: Power query - create custom function
+type: text/vnd.tiddlywiki
+
+In Power query editor, create a new blank query and add there:
+
+```js
+(TheNumber as number) => 
+let
+	Source = TheNumber * TheNumber
+in
+	Source
+```
+
+For list of available types, see [[here|https://docs.microsoft.com/en-us/powerquery-m/m-spec-types]]

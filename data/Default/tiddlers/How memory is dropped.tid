@@ -1,0 +1,11 @@
+created: 20220110192619037
+creator: AndreiD049
+modified: 20220724143700994
+modifier: AndreiD049
+tags: Rust transferred
+title: How memory is dropped
+type: text/vnd.tiddlywiki
+
+Memory is dropped automatically when the scope where memory is [[owned|Ownership rules]] is over.
+
+To drop memory, function `drop` is called

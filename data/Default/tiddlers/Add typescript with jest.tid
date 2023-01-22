@@ -1,0 +1,20 @@
+created: 20220103202659006
+creator: AndreiD049
+modified: 20220723174815757
+modifier: AndreiD049
+tags: Javascript Typescript transferred
+title: Add typescript with jest
+type: text/vnd.tiddlywiki
+
+If you want to add typescript support, <<copy-text "npm i --D @babel/preset-typescript @types/jest">>
+
+Then add `@babel/preset-typescript` to the list of presets in your `babel.config.js`.
+
+```js
+module.exports = {
+  presets: [
+    ['@babel/preset-env', {targets: {node: 'current'}}],
+    '@babel/preset-typescript', // <-- this
+  ],
+};
+```

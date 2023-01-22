@@ -1,0 +1,20 @@
+created: 20220102170104261
+creator: AndreiD049
+modified: 20220723195031405
+modifier: AndreiD049
+tags: Algorithms transferred
+title: Contains duplicate
+type: text/vnd.tiddlywiki
+
+Source: https://leetcode.com/problems/contains-duplicate
+
+```text
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+```
+
+!! Solution
+
+There are 2 possible solutions that appear to me as optimal:
+
+1. Sort the array first. It is easy to find out if there are duplicates in a sorted array. The complexity will be then equal to the complexity of sorting. This is a more memory efficient method.
+2. Use a hash map to identify if an element was previously found

@@ -1,0 +1,45 @@
+created: 20220102170834105
+creator: AndreiD049
+modified: 20220102171016077
+modifier: AndreiD049
+tags: Algorithms
+title: Two sum
+type: text/vnd.tiddlywiki
+
+!! Two sum
+
+Source - https://leetcode.com/problems/two-sum
+
+```text
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+```
+
+What we can do, we can use brute force and iterate through the list twice in a nester loop. But this will lead to complexity of `O(n^2)`
+
+!! Solution
+
+Use a hashmap with `key=element` and `value=index of the element`. This way we can check in constant time if an element is in the hashmap.
+Now, for example, we have list `[2, 3, 1]` and our target is `4`. When we are at element `2` then we will check in the hashmap if the other element `4 - 2 = 2` is in the hashmap, and we will indeed find the element `2`, but we cannot use it because it's the same element we are pairing with.
+Because of the above issue, we cannot initially scan the whole hashmap and then start to iterate over elements. What we should do, is filling the map as we go, adding an element after it was checked.
+So, start with an empty map, then iterate over elements, if the `target-element` value is not in the map, add `element: index` and continue.
+
+!! Sorted array
+
+If the array is sorted, then you don't need a hash map to find two-sum. Just 2 pointers:
+
+```text
+	1  2  3  4  5  6  | target = 6
+	|              |
+	left           right
+```
+
+We can check if the sum of `left + right = target` and adjust the pointers accordingly. If the sum is bigger than `target` we need to make if a little smaller, so we move the `right` pointer to the left. If sum is smaller than target, to make it a little bigger we move the `left` pointer to the right.
+
+!! Thoughts
+
+* When we need to pair some elements in a data structure, consider adding them into a hashmap for easy lookup. The key should be the criteria under which the elements should be paired.
+* If order matters, either use a list as hashmap value, or fill the hashmap when looping over the elements, and not initially before looping

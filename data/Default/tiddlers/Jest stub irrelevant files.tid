@@ -1,0 +1,29 @@
+created: 20220328193744750
+modified: 20220724153956252
+tags: transferred
+title: Jest stub irrelevant files
+type: text/vnd.tiddlywiki
+
+Some files are not needed while testing with [[Jest]], like `.png` or `.scss` files.
+
+In order to stub them, add following to your `jest.config.js`:
+
+```js
+// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+"moduleNameMapper": {
+	"\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",
+	"\\.(gif|ttf|eot|svg|png)$": "<rootDir>/__mocks__/fileMock.js",
+},
+```
+
+And create respective files
+
+```js
+/** styleMock.js */
+module.exports = {};
+```
+
+```js
+/** fileMock.js */
+module.exports = 'test-file-stub';
+```

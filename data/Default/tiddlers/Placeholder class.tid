@@ -1,0 +1,23 @@
+created: 20220102173354572
+creator: AndreiD049
+modified: 20220724165354469
+modifier: AndreiD049
+tags: Scss transferred
+title: Placeholder class
+type: text/vnd.tiddlywiki
+
+!! Placeholder class
+
+In scss, a placeholder class is a class that starts with `%` instead of a `.`
+
+```scss
+%flex {
+	display: flex;
+}
+
+.some-real-class {
+	@extend %flex; // This will add %flex styles to current class
+	// other styles
+}
+```
+

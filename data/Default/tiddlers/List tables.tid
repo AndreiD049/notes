@@ -1,0 +1,31 @@
+created: 20220510164100995
+modified: 20220724155153416
+tags: Postgres transferred
+title: List tables
+type: text/vnd.tiddlywiki
+
+To list all tables in [[Postgres]], use `\dt` or `\dtables`
+
+example output:
+
+```sql
+                 List of relations
+ Schema |          Name          | Type  |  Owner
+--------+------------------------+-------+---------
+ public | categories             | table | KREAKVA
+ public | customer_customer_demo | table | KREAKVA
+ public | customer_demographics  | table | KREAKVA
+ public | customers              | table | KREAKVA
+ public | employee_territories   | table | KREAKVA
+ public | employees              | table | KREAKVA
+ public | monthly_savings        | table | KREAKVA
+ public | order_details          | table | KREAKVA
+ public | orders                 | table | KREAKVA
+ public | products               | table | KREAKVA
+ public | region                 | table | KREAKVA
+ public | shippers               | table | KREAKVA
+ public | suppliers              | table | KREAKVA
+ public | territories            | table | KREAKVA
+ public | us_states              | table | KREAKVA
+(15 rows)
+```

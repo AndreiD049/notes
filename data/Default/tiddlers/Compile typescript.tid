@@ -1,0 +1,16 @@
+created: 20220102130259523
+creator: AndreiD049
+modified: 20220723193007720
+modifier: AndreiD049
+tags: Typescript transferred
+title: Compile typescript
+type: text/vnd.tiddlywiki
+
+Compilation of files can be done in any of the following ways:
+
+* `tsc` to compile the nearby project (recognized via [[tsconfig|Typescript config file]] file).
+* `tsc somfile.ts` compile a single file
+* `tsc --project othertsconfig.json`
+* `tsc index.js --declaration --emitDeclarationOnly`
+* `tsc src/*.ts` compile all .ts files in `src` folder.
+* `tsc one.ts two.ts --target esnext --outFile index.js` combine two files

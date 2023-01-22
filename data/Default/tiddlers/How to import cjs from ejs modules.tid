@@ -1,0 +1,11 @@
+created: 20220103204449485
+creator: AndreiD049
+modified: 20220724135304060
+modifier: AndreiD049
+tags: Javascript Recipe transferred
+title: How to import cjs from ejs modules
+type: text/vnd.tiddlywiki
+
+You can import [[Common js modules]] to [[Es modules]] and vice versa using [[Dynamic import]].
+
+But be carefull, there are performance considerations to this.

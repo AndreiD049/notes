@@ -1,0 +1,21 @@
+created: 20220403073833267
+modified: 20220723154429817
+tags: Javascript Recipe transferred
+title: Add prettier to project
+type: text/vnd.tiddlywiki
+
+!!! Install 
+
+<<copy-text "npm i -D prettier">>
+
+!!! Config file
+
+```js
+// prettier.config.js or .prettierrc.js
+module.exports = {
+  trailingComma: "es5",
+  tabWidth: 4,
+  semi: true,
+  singleQuote: true,
+};
+```

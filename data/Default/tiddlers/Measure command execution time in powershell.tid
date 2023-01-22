@@ -1,0 +1,11 @@
+created: 20220110180715571
+creator: AndreiD049
+modified: 20220724160731046
+modifier: AndreiD049
+tags: Windows Recipe transferred
+title: Measure command execution time in powershell
+type: text/vnd.tiddlywiki
+
+```ps
+Measure-Command { Invoke-Expression "cargo run" | Out-Default } 
+```

@@ -1,0 +1,11 @@
+created: 20220510160112906
+modified: 20220510172457088
+tags: Database
+title: T-SQL
+type: text/vnd.tiddlywiki
+
+Also known as [[Transact-SQL|https://en.wikipedia.org/wiki/Transact-SQL]]
+Proprietary [[SQL]] extension by Microsoft.
+We happen to use it at work.
+
+<<toc "T-SQL">>

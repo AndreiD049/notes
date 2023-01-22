@@ -1,0 +1,15 @@
+created: 20220102173345108
+creator: AndreiD049
+modified: 20220102173509868
+modifier: AndreiD049
+tags: Css
+title: Scss
+type: text/vnd.tiddlywiki
+
+Scss is a preprocessor for css
+
+Interesting might be:
+
+* Interpolation - [[Scss interpolation]]
+* Placeholder classes [[Placeholder class]]
+* `:export` keyword [[Scss export]]

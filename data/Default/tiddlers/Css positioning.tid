@@ -1,0 +1,23 @@
+created: 20220102173851340
+creator: AndreiD049
+modified: 20220723202821358
+modifier: AndreiD049
+tags: Css transferred
+title: Css positioning
+type: text/vnd.tiddlywiki
+
+!! CSS Positioning
+
+Possible values: `sticky`, `relative`, `fixed`, `absolute` and `sticky`.
+
+Be default, position is `static`.
+
+With position `relative`, the element will be positioned relative to it's normal (static) position. Properties `left`, `top`, `right`, `bottom` can be used to move the element.
+
+Position `fixed` places the element relative to the viewport.
+
+Position `abosolute` is placed relative to the nearest positioned ancestor. (with position `relative`). \*\*Absolute positioned elements are removed from normal document flow, and are not part of parent's width and height.
+
+Position `sticky` is a combination of `relative` and `fixed` position. And it depends on current user's scroll position.
+**For `sticky` positioning to work, at least one of `left`, `right`, `top`, `bottom` properties need to be specified.**
+Useful to implement things like sticky headers as you scroll. (the ones that remain on the top when you scroll past them).

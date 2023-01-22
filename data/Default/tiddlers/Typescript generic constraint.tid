@@ -1,0 +1,18 @@
+created: 20220102125348976
+creator: AndreiD049
+modified: 20220102131110971
+modifier: AndreiD049
+tags: Typescript
+title: Typescript generic constraint
+type: text/vnd.tiddlywiki
+
+In [[Typescript]], if i want to specify certain properties that types in [[Typescript generic functions]] have, i can use constraints.
+This is done using the work `extends` after the generic type.
+
+```ts
+function hello<T extends {name: string}>(user: T): T {
+	// because of the constraint i can use the name property on my parameter
+	user.name = user.name.toUpperCase();
+	return user;
+}
+```

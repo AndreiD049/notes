@@ -1,0 +1,14 @@
+created: 20211228210124340
+creator: AndreiD049
+modified: 20220723204413741
+modifier: AndreiD049
+tags: transferred
+title: Definition of enterprise application
+type: text/vnd.tiddlywiki
+
+From the book [[Patterns of enterprise applications architecture]]
+
+Some might say that enterprise applications are just ''big'' systems, but there are plenty of large projects that are not enterprise applications.
+
+My understanding of enterprise applications is that. Those are systems integrated very closely with business processes (or driving business processes). Like for example payroll, logistic applications and warehouse management systems, financial applications etc. Those applications often operate with data and this data needs to persist somewhere.
+Enterprise applications are often built around some business rules, and [[Layered architecture]] is very helpful with this. By isolating business rules to a separate layer, it will be easier to change (and business rules are something that changes a lot)

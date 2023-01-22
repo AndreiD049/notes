@@ -1,0 +1,37 @@
+created: 20220404184356140
+modified: 20220724124136705
+tags: Patterns transferred
+title: Singleton pattern
+type: text/vnd.tiddlywiki
+
+! Singleton
+
+This is a very simple pattern. It ensures that there will be only one instance of a class at the same time in the application. This if often needed when objects with state need to be passed around the application.
+
+In [[Javascript]], a singleton is very easily implemented, just by exporting a concrete instance of an object:
+
+```javascript
+class Database {
+    constructor(source) {
+        this.source = source;
+    }
+
+    getSource() {
+        return this.source;
+    }
+}
+
+export default new Database("data.sqlite");
+```
+
+! Solved problem
+
+Singleton is a videly used pattern. And it solves well the problem of passing a stateful object around in application. It could be used in applications where there are not so many dependencies, or we know those dependencies will not change (we never know though).
+
+! Caveats
+
+You should never (at least in javascript), assume that the singleton instance is really the only one instance used in the application. Unless using a `global.MyInstance` variable, there is always a possibility that two packages will use different versions of some singleton dependency, and will download two versions in their `node_modules`. But you probably never need a really unique singleton in the whole application.
+
+<<<
+Singleton is cool, but have you tried [[Dependency injection]] to handle your dependencies? 
+<<< Jason Statham

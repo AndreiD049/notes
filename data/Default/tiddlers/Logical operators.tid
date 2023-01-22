@@ -1,0 +1,13 @@
+created: 20220510191753394
+modified: 20220724155504374
+tags: T-SQL transferred
+title: Logical operators
+type: text/vnd.tiddlywiki
+
+* `ALL` - `X > ALL(A, B, C)`
+* `ANY|SOME` - `X > ANY|SOME(A, B, C)`
+* `IN` - `X IN (A, B, C)`
+* `NOT IN` - `X NOT IN (A, B, C)`
+* `BETWEEN` - `X BETWEEN A AND B`
+* `LIKE` - `X LIKE <pattern>`
+* `IS [NOT] NULL` - `X IS [NOT] NULL` <-- State predicate (always evaluates to TRUE or FALSE)

@@ -1,0 +1,25 @@
+created: 20220404190005815
+modified: 20220724124616532
+tags: Patterns transferred
+title: Dependency injection
+type: text/vnd.tiddlywiki
+
+! Dependency injection
+
+Also called just DI. It's a pattern, same as [[Singleton pattern]] that facilitates passign dependencies. Unlike [[singleton|Singleton pattern]], where the dependency is created outside of your program main logic, in DI, there is such a thing called injector, which constructs the dependencies, and provides them to the parts of the application that require them.
+
+<$mermaid text="
+flowchart BT
+	Service -->|depends on|Interface
+	Dependency -->|implements|Interface
+	Injector -->|creates|Dependency
+	Dependency -->|injected into|Service
+" />
+
+! Solved problem
+
+The DI solves the same problems as [[singleton|Singleton pattern]], plus having less coupling between parts of the application. In fact, dependencies are quite interchangeable until they all implement the same interface.
+
+! Caveats
+
+Injecting dependency manually can be cumbersome, and in large applications there might be a need to insert a lot of services. To help with those, check out [[Inversion of control]] and [[Dependency injection container]]

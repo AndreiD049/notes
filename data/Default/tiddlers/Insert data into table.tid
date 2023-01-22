@@ -1,0 +1,31 @@
+created: 20220102115422891
+creator: AndreiD049
+modified: 20220724153323960
+modifier: AndreiD049
+tags: Postgres transferred
+title: Insert data into table
+type: text/vnd.tiddlywiki
+
+!! Insert data into table
+
+You can insert values into postgresql via SQL command:
+
+```sql
+INSERT INTO cities VALUES ('San Francisco', '(-194.0, 53.0)');
+
+# or 
+
+INSERT INTO weather (city, temp_lo, temp_hi, prcp, date)
+    VALUES ('San Francisco', 43, 57, 0.0, '1994-11-29');
+```
+
+Or, you can insert directly from a text, or to a text file using the `\copy` command:
+
+```sql
+# This will copy data from text file to the table
+# Fields are tab-separated
+\copy table_name FROM '/home/user/Documents/data.txt';
+
+# This will copy data from table to a text file
+\copy table_name TO '/home/user/Documents/data.txt';
+```

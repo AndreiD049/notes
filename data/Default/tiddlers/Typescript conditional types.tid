@@ -1,0 +1,29 @@
+created: 20220102124114663
+creator: AndreiD049
+modified: 20220102124243917
+modifier: AndreiD049
+tags: Typescript
+title: Typescript conditional types
+type: text/vnd.tiddlywiki
+
+In [[Typescript]], you can create types that are conditionally based on other types.
+Usually they have the form `SomeType extends SuperType ? TrueType : FalseType`, same as [[Javascript]] ternary operator.
+
+```ts
+// reads as, if Dog extends Animal, type is string, else number
+type StringOrNumber = Dog extends Animal ? string : number;
+```
+
+Conditional types are more useful when used with [[Typescript generic tips]].
+
+```ts
+type Flatten<Type> = Type extends any[] ? Type[number] : Type;
+```
+
+!! infer keyword
+
+Same result as above can be received by using the infer keyword. It introduces a new generic type.
+
+```ts
+type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
+```

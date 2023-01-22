@@ -1,0 +1,123 @@
+created: 20220717135635152
+modified: 20220724162656674
+tags: Vim transferred
+title: Neovim luasnippets
+type: text/vnd.tiddlywiki
+
+Setting up luasnippets in neovim:
+
+For more extensive documentation always use internal vim help `:h luasnip.txt`
+
+!! Setting up
+
+For default config values, see: https://github.com/L3MON4D3/LuaSnip/blob/69cb81cf7490666890545fef905d31a414edc15b/lua/luasnip/config.lua#L82-L104
+
+```lua
+local ls = require'luasnip'
+
+ls.config.set_config {
+    history = true,
+
+    -- this is handy to see all values update at one if used in many places
+    updateevents = "TextChanged,TextChangedI",
+
+    -- Those are the globals that will be present in each file
+    -- so you don't need to re-define then each time
+    snip_env = {
+        ls = require'luasnip',
+        parse = ls.parser.parse_snippet,
+        fmt = require('luasnip.extras.fmt').fmt,
+        rep = require('luasnip.extras').rep,
+        s = ls.snippet,
+        t = ls.text_node,
+        i = ls.insert_node,
+        f = ls.function_node,
+        c = ls.choice_node,
+    }
+}
+
+-- cleanup the snippets before reloading, this is actually needed for the contents to change
+ls.cleanup()
+```
+
+!! Loading files
+
+In order to load snippets from folder, add following
+
+```lua
+-- to load snippets from lua files
+require('luasnip.loaders.from_lua').lazy_load({ paths = "./luasnippets" })
+-- to load vscode like snippets
+require('luasnip.loaders.from_vscode').lazy_load({ paths = "./snippets" })
+```
+
+!! Lua snippets
+
+Snippets stored in lua files can be more powerful, although less portable.
+To start with them, create a directory (ex: `luasnippets`) where all snippets will be stored
+
+Snippets are stored based on `filetype`. For example, for snippets available for all files, create a file `luasnippets/all.lua`. (See [[Vim get filetype]]) This file needs to return a list of 2 values, snippets and autosnippets (which may be null)
+
+Example (notice we didn't declare any local variables, because we used snip_env setup above):
+
+```lua
+local snippets = {
+    s('state', fmt("const [{}, set{}] = React.useState({});{}", {
+        i(1, "state"),
+        f(function (args)
+            return (args[1][1]:gsub("^%l", string.upper))
+        end, {1}),
+        i(2, "value"),
+        i(0)
+    }))
+}
+
+local autosnippets = {}
+
+return snippets, autosnippets
+```
+
+!! Keymaps
+
+In order to navigate better, you can set following keymaps:
+
+```lua
+local ls = require('luasnip')
+-- Luasnip jump forward or expand
+vim.keymap.set({'i', 's'}, "<C-k>", function()
+    if (ls.expand_or_jumpable()) then
+        ls.expand_or_jump()
+    end
+end, {silent = true})
+
+-- Luasnip jump backward
+vim.keymap.set({'i', 's'}, "<C-j>", function()
+    if (ls.jumpable(-1)) then
+        ls.jump(-1)
+    end
+end, {silent = true})
+
+vim.keymap.set({'i', 's'}, "<C-l>", function()
+    if (ls.choice_active()) then
+        ls.change_choice(1)
+    end
+end, {silent = true})
+
+-- reload snippets after change was done
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source " .. vim.fn.stdpath('config') .. "/lua/snippets-setup.lua<cr>", { silent = true })
+
+-- Edit snippets for current filetype
+vim.keymap.set("n", "<leader><leader>se", function() require("luasnip.loaders").edit_snippet_files() end, { silent = true })
+```
+
+!! Extending filetypes
+
+```lua
+-- when in typescript file, search ONLY typescript and typescriptreact snippets
+ls.filetype_set("typescript", { "typescript", "typescriptreact" })
+
+-- when in typescript files, ALSO search typescriptreact
+-- WARNING: if this code is rerun every time setup is reloaded, you will see 
+-- duplicate snippets
+ls.filetype_extend("typescript", { "typescriptreact" })
+```

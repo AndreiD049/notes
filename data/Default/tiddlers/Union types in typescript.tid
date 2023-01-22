@@ -1,0 +1,27 @@
+created: 20220102121844264
+creator: AndreiD049
+modified: 20220724125721043
+modifier: AndreiD049
+tags: Typescript transferred
+title: Union types in typescript
+type: text/vnd.tiddlywiki
+
+Union types is a way to specify that a value can be any one of union members types. Example `string | number` type implies that value is either `string` or `number`.
+
+When we have a union type, it means we can use only properties that are common to **every** type in that union. For example, having variable `thing` of type `string | number`, we cannot just write `thing.toUpperCase()` because type `number` doesn't have this method.
+
+In order to work around this, we need to convince [[Typescript]] that it's actually the correct type (this is called [[Typescript function narrowing]]):
+
+```js
+// thing is of type `string | number`
+if (typeof thing === 'string') {
+ // here we are sure think is a string
+ console.log(thing.toUpperCase());
+} else {
+ // thing is a number
+ console.log(thing.toFixed(1));
+}
+// ...
+```
+
+Also, you can use functions like `Array.isArray`

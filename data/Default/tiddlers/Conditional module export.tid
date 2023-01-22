@@ -1,0 +1,25 @@
+created: 20220103204028212
+creator: AndreiD049
+modified: 20220723194610319
+modifier: AndreiD049
+tags: Javascript transferred
+title: Conditional module export
+type: text/vnd.tiddlywiki
+
+!! conditional-exports
+
+Example, different files are loaded if package is `import`ed or `require`d:
+Same rules as in [[Import example]]
+
+```json
+// ./node_modules/pkg/package.json
+{
+  "type": "module",
+  "main": "./index.cjs",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.cjs"
+  }
+}
+```
+

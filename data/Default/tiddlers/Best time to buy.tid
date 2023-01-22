@@ -1,0 +1,28 @@
+created: 20220102165227740
+creator: AndreiD049
+modified: 20220723180415896
+modifier: AndreiD049
+tags: Algorithms transferred
+title: Best time to buy
+type: text/vnd.tiddlywiki
+
+```text
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+```
+
+!! Solution
+
+Solution to this problem is of complexity `O(n)`.
+Also called sliding-window technique
+The idea is to have two pointers. One pointing at the current lowest price, and the other at the current examined price. Also, we want to keep track of the maximum profit made during the loop.
+So, while we move through the list, we should keep track of 3 things:
+
+* the minimum price that we encountered so far
+* The maximum profit we could get
+* the current price we're at
+
+This problem can be also solved using [[Kodane's algorithm|https://www.geeksforgeeks.org/largest-sum-contiguous-subarray]] also known as `largest sum of contiguous subarray`.

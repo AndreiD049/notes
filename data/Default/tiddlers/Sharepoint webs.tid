@@ -1,0 +1,23 @@
+created: 20220102175201775
+creator: AndreiD049
+modified: 20220102175214933
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint webs
+type: text/vnd.tiddlywiki
+
+!! Current web
+
+You can easily access the current web
+
+```ts
+const web = await sp.web();
+```
+
+!! Access another web
+
+To access another web, you would have to first construct it using `Web`.
+
+```ts
+	const web = await Web("https://devadmintools.sharepoint.com/sites/MasterData");
+```

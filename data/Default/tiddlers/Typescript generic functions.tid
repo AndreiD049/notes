@@ -1,0 +1,22 @@
+created: 20220102125204112
+creator: AndreiD049
+modified: 20220102125341688
+modifier: AndreiD049
+tags: Typescript
+title: Typescript generic functions
+type: text/vnd.tiddlywiki
+
+[[Typescript]] generic functions work similar to other languages generics, but why are they needed since javascript has loose typing?
+Generic functions are needed when you want to define a relationship between parameters and other parts of your function (ex. return type)
+
+```ts
+// I want to return the same exact type i got in
+function test<T>(a: T): T {
+	return a;
+}
+
+test("test"); // typescript can infer the generic types too
+```
+
+See also: [[Typescript generic constraint]]
+For tips on generics see [[Typescript generic tips]]

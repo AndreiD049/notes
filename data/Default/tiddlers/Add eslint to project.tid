@@ -1,0 +1,11 @@
+created: 20220115215641093
+creator: AndreiD049
+modified: 20220723152454408
+modifier: AndreiD049
+tags: Javascript Recipe transferred
+title: Add eslint to project
+type: text/vnd.tiddlywiki
+
+# Install eslint -- <<copy-text "npm i -D eslint">>
+# Run -- <<copy-text "npx eslint --init">>
+# Choose appropriate steps in the wizard

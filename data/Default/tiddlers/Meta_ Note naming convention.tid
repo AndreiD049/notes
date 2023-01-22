@@ -1,0 +1,24 @@
+created: 20211228182537894
+creator: AndreiD049
+modified: 20220724161643896
+modifier: AndreiD049
+tags: transferred
+title: Meta: Note naming convention
+type: text/vnd.tiddlywiki
+
+!! General Rules
+
+* Capitalization. All tiddler titles should have only the first letter and nouns capitalized. For example `Tools for editing Html` is preferred instead of `Tools for Editing HTML`. Acronyms like `Html`, or `Sap` should also have only the first letter capitalized
+* Plurals should not be used in tags, and only when strictly necessary in titles. For example `How to write a pure function` instead of `How to write pure functions`
+* Punctuation should be removed from titles (except `-` in some situations like `Concept - definition`)
+* If numbers are small (like less than 100) should be spelled out. For example `Nine circles of hell` instead of `9 circles of hell`
+* Quotes. Use only `'` (single quotes)
+* Avoid using namespaces (except for cases specified below). Instead, prefer linking and tagging the notes
+
+!! Patterns
+
+For some type of tiddlers, I might want to use namespaces:
+
+!!!!! __//Note: Namespaces like `Meta: ` are not part of the title, and first character after it should still be capitalized//__
+
+* `Meta: ` (with space after colon) will be placed in the beginning of title of tiddlers like this one, that discuss technical ideas related to the wiki itself, not to my ideas

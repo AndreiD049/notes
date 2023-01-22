@@ -1,0 +1,17 @@
+created: 20220510173919391
+modified: 20220724164012114
+tags: [[T-SQL Datatypes]] transferred
+title: Numeric
+type: text/vnd.tiddlywiki
+
+!!! Datatype representing numbers in T-SQL:
+
+!!! Following numeric types are supported:
+
+# ''bit'' - representing a single bit (1 or 0). If there are 8 or less bit columns in a table they will get optimised and stored in a single byte.
+# ''numeric'' or ''decimal'' - represent the same thing, a number with s certain //precision// and //scale// (aka //dec(p, s)//). Values with different precision and scales will be considered different types (//so for exampel ''decimal(5, 2)'' and ''decimal(6,1)'' are considered different types//).
+## ''precision'' - number of digits to keep (both to the left and right of the decimal point)
+## ''scale'' - number of digits to keep after the decimal point.
+# ''float'' and ''real'' - not so precise as decimal.
+# ''bigint'' (8 bytes), ''int'' (4 bytes), ''smallint'' (2 bytes), ''tinyint'' (1 byte).
+# ''money'' and ''smallmoney'' - 💲💸💰💵 data type to represent currencies.

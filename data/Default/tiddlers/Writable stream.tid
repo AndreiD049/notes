@@ -1,0 +1,35 @@
+created: 20220103212252405
+creator: AndreiD049
+modified: 20220103213121527
+modifier: AndreiD049
+tags: Javascript
+title: Writable stream
+type: text/vnd.tiddlywiki
+
+Examples of [[Writable|https://nodejs.org/docs/latest-v15.x/api/stream.html#stream_class_stream_writable]]
+
+Streams include:
+
+* [[HTTP requests, on the client|https://nodejs.org/docs/latest-v15.x/api/stream.htmlhttp.html#http_class_http_clientrequest]]
+* [[HTTP responses, on the server|https://nodejs.org/docs/latest-v15.x/api/stream.htmlhttp.html#http_class_http_serverresponse]]
+* [[fs write streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlfs.html#fs_class_fs_writestream]]
+* [[zlib streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlzlib.html]]
+* [[crypto streams|https://nodejs.org/docs/latest-v15.x/api/stream.htmlcrypto.html]]
+* [[TCP sockets|https://nodejs.org/docs/latest-v15.x/api/stream.htmlnet.html#net_class_net_socket]]
+* [[child process stdin|https://nodejs.org/docs/latest-v15.x/api/stream.htmlchild_process.html#child_process_subprocess_stdin]]
+* [[process.stdout|https://nodejs.org/docs/latest-v15.x/api/stream.htmlprocess.html#process_process_stdout]]
+* [[process.stderr|https://nodejs.org/docs/latest-v15.x/api/stream.htmlprocess.html#process_process_stderr]]
+
+!! Writable stream events
+
+* `close`: fired when stream is closed and no more events will be fired.
+* `drain`: when stream's internal [[Stream buffering]] is full, it will stop reading data. Once the buffer is empty again, `drain` event will be fired.
+* `error`: when an error occurred
+* `finish`: fired after `end()` method is called and all data is flushed
+* `pipe`: fired when this writable stream is `pipe`d to another [[Readable stream]]
+
+!! Writable methods
+
+- `setDefaultEncoding`: for example 'utf-8'
+- `write`: will write data into the stream. If flushing the data is slower than writing it, it will start accumulating the data in the [[buffer|Stream buffering]]. When the buffer is full, this method will start returning `false` and buffering all written chunks.
+- `end()` to finish writing data onto the stream

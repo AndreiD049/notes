@@ -1,0 +1,64 @@
+created: 20220102115524527
+creator: AndreiD049
+modified: 20221219083521534
+modifier: AndreiD049
+tags: Postgres transferred
+title: Joins in postgres
+type: text/vnd.tiddlywiki
+
+!! Joins in SQL
+
+- INNER JOIN, or just JOIN. Matches all rows ON a certain condition and keeps only the ones where this condition is true.
+
+```sql
+mydb=> SELECT name, surname, job FROM people JOIN jobs ON name = person_name;
+
+  name  |  surname   |    job
+--------+------------+------------
+ Jane   | Doe        | Accountant
+ John   | Doe        | Accountant
+ Bill   | Gates      | CEO
+ Max    | Test       | Artist
+(4 rows)
+```
+
+- LEFT OUTER JOIN. This translates to, get each row from left table at least once, and join it with the table on the right. If nothing to join, leave empty (null). Or, get all data from left table, and matching data from right table. Same with RIGHT OUTER JOIN but inverse. There is also FULL OUTER JOIN, which is the combination of two (get all data from both tables, where there is no link, leave blank/null)
+
+```sql
+mydb=> SELECT name, surname, job FROM people LEFT OUTER JOIN jobs ON name = person_name;
+
+  name  |  surname   |    job
+--------+------------+------------
+ Jane   | Doe        | Accountant
+ John   | Doe        | Accountant
+ Bill   | Gates      | CEO
+ Max    | test       | Artist
+ Jeff   | Bezos      |                <-- Here there is not data to link
+ Jeff   |            |                <-- Here there is not data to link
+(6 rows)
+```
+
+- SELF JOIN. Self join is nothing more than a simple join, but joining a table with itself. This is done by using table aliases.
+
+```sql
+mydb=> SELECT p1.name, p1.age, p2.name, p2.age FROM people p1 JOIN people p2 ON p1.age > p2.
+age;
+  name  | age |  name  | age
+--------+-----+--------+-----
+ Jane   |  24 | John   |  19
+ Bill   |  70 | Jane   |  24
+ Bill   |  70 | John   |  19
+ Bill   |  70 | Jeff   |  44
+ Bill   |  70 | Jeff   |  51
+ Bill   |  70 | Artiom |  30
+ Jeff   |  44 | Jane   |  24
+ Jeff   |  44 | John   |  19
+ Jeff   |  44 | Artiom |  30
+ Jeff   |  51 | Jane   |  24
+ Jeff   |  51 | John   |  19
+ Jeff   |  51 | Jeff   |  44
+ Jeff   |  51 | Artiom |  30
+ Artiom |  30 | Jane   |  24
+ Artiom |  30 | John   |  19
+(15 rows)
+```

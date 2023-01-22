@@ -1,0 +1,47 @@
+created: 20220102124331392
+creator: AndreiD049
+modified: 20220102124538542
+modifier: AndreiD049
+tags: Typescript
+title: Typescript generic tips
+type: text/vnd.tiddlywiki
+
+!! Some functions or parameters don't need to be generic
+
+```ts
+// We don't actually need this function to be generic
+function why<T extends string>(name: T) {
+	console.log(name);
+}
+
+// It could be
+function why(name: string) {
+	console.log(name);
+}
+```
+
+!! Generic types
+
+`interfaces` and `type aliases` can also be `generic`
+
+```ts
+interface Message<Type> {
+	content: Type;
+}
+
+type Message<Type> = {
+	content: Type;
+}
+```
+
+!! Generic function types
+
+```ts
+let a: <Type>(a: Type) => Type = (arg) => arg;
+```
+
+!! All or none scenario
+
+When you have a interface when 2 properties should be optional unless one of them is provided (then both should be provided) use [[Typescript all or none]]
+
+Always try to see the purpose of introducing a generic type. It **should always appear in 2 places**: in parameters list, and somewhere in the body or return type (so that it relates 2 values).

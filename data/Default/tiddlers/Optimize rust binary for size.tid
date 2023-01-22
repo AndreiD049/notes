@@ -1,0 +1,15 @@
+created: 20220109074229869
+creator: AndreiD049
+modified: 20220724164420854
+modifier: AndreiD049
+tags: Rust Linux transferred
+title: Optimize rust binary for size
+type: text/vnd.tiddlywiki
+
+By default on Linux and macOS, symbol information is included in the compiled .elf file. This information is not needed to properly execute the binary. To remove this, run `strip` on the .elf file:
+
+```sh
+$ strip target/release/min-sized-rust
+```
+
+For more possibilities, see: https://github.com/johnthagen/min-sized-rust

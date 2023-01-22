@@ -1,0 +1,13 @@
+created: 20211228205900614
+creator: AndreiD049
+modified: 20211228210042723
+modifier: AndreiD049
+tags: 
+title: Software Architecture
+type: text/vnd.tiddlywiki
+
+Architecture is one of the words that clearly has many definitions in software world.
+Principal ones according to [[the book|Patterns of enterprise applications architecture]]:
+
+# High-level breakdown of components of the system
+# Decisions that are hard to change

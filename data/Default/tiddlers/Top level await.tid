@@ -1,0 +1,22 @@
+created: 20220103204407617
+creator: AndreiD049
+modified: 20220103211122149
+modifier: AndreiD049
+tags: Javascript
+title: Top level await
+type: text/vnd.tiddlywiki
+
+
+[[Source|https://nodejs.org/docs/latest-v15.x/api/esm.html#esm_top_level_await]]
+
+''//Experimental feature//''
+
+In [[Es modules]], it is possible to have a top-level await expression, outside any async function.
+
+For example:
+
+```js
+// a.mjs
+const five = await Promise.resolve(5);
+```
+

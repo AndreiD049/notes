@@ -1,0 +1,11 @@
+created: 20220102180159370
+creator: AndreiD049
+modified: 20220102180211611
+modifier: AndreiD049
+tags: Sharepoint
+title: Sharepoint troubleshooting
+type: text/vnd.tiddlywiki
+
+!! Your web part will not appear in the toolbox
+
+Try to load `https://localhost:4321/temp/manifests.js` in browser, then it should be solved.

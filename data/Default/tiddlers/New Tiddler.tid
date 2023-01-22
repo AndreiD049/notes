@@ -1,9 +1,8 @@
-created: 20230122084739136
-modified: 20230122084747617
-tags: 
+caption: Checkbox with state
+created: 20220312110218452
+modified: 20220724162706039
+tags: $:/tags/TextEditor/Snippet transferred
 title: New Tiddler
 type: text/vnd.tiddlywiki
 
-[img[image.png]]
-
-test value
+<$checkbox tiddler="Checkboxes" index="" checked="selected" unchecked="" default=""> Content</$checkbox>

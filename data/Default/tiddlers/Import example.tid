@@ -1,0 +1,41 @@
+created: 20220103204131248
+creator: AndreiD049
+modified: 20220723194341847
+modifier: AndreiD049
+tags: Javascript transferred
+title: Import example
+type: text/vnd.tiddlywiki
+
+In [[Package json]], it is possible to define aliases for imports, and apply them conditionally depending on environment that is being run, or how the package is imported (with `require` or `import`)
+
+!! Conditional imports
+
+```json
+...
+"imports": {
+  "#parser": {
+    "import": "./src/parser.mjs",
+    "require": "./src/parser.cjs",
+    "node": "node-parser", // should always come after import or require
+    "default:": "./src/parser-not-found.js" // should always come last
+  }
+}
+...
+```
+
+Usage:
+
+```js
+// if used from node, 'node parser will be imported'
+import default from '#parser';
+
+// if not used from node, and imported, will look for ./src/parser.mjs
+import default from '#parser';
+
+// if required, will look for ./src/parser.cjs
+const { default } = require('#parser');
+
+// in any other cases, wil load ./src/parser-not-found.js
+```
+
+**Note**: that the imported entry must start with `#` in order to avoid conflicts with Bare specifiers (see [[Import specifiers]])

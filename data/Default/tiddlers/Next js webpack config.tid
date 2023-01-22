@@ -1,0 +1,22 @@
+created: 20220102172823355
+creator: AndreiD049
+modified: 20220724163754663
+modifier: AndreiD049
+tags: [[Next js]] transferred
+title: Next js webpack config
+type: text/vnd.tiddlywiki
+
+In order to add new rules to [[Webpack]] config, add this to `next.config.js`:
+
+```js
+module.exports = {
+  reactStrictMode: true,
+  webpack: (config) => {
+    config.module.rules.push({ // here we are adding a new rule to webpack
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+    return config;
+  }
+};
+```

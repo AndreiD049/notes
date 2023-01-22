@@ -1,0 +1,30 @@
+created: 20220503131049348
+modified: 20220503132529213
+tags: 
+title: Sharepoint Indexeddb caching concept
+type: text/vnd.tiddlywiki
+
+Documentation and other resources on Indexeddb: 
+
+# https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+
+Intention: 
+
+It should be easy and straightforward to cache and invalidate cached values.
+The caching should work with [[pnpjs|Pnpjs version 3 install typescript rush compiler]], see [[behaviours examples|https://pnp.github.io/pnpjs/core/behaviors/]].
+
+API:
+
+```js
+/* Setting up the caching */
+const sp = SPBuilder.GetSP().using(IndexedDBCaching({
+	expireFunc: (url) => new Date(), // return the date of expiry,
+	keyFactory: (url) => "somekey", // return the key of the cached value
+	/* 
+	We also need something to specify when the cache is going to be invalidated. 
+	Normally this happens depending on:
+		* Method (GET, PUT, POST, DELETE)
+		* Modifying other urls, for example when i adjust one item '/.../items(12)', i also want the endpoint for all items to be invalidated '/.../items'
+	*/
+}));
+```

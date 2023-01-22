@@ -1,0 +1,47 @@
+created: 20220102171303737
+creator: AndreiD049
+modified: 20220723152712616
+modifier: AndreiD049
+tags: [[Chrome extensions]] transferred
+title: Creating a manifest
+type: text/vnd.tiddlywiki
+
+Create a manifest in the root of the project:
+
+```json
+{
+  "name": "Getting Started Example",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+	// File to run in background
+	"background": {
+    "service_worker": "background.js"
+  },
+  // Static content scripts
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/main.js"],
+			"run_at": "document_idle"
+    }
+  ],
+	// Add permissions that the extension will need
+	"permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "folder/icon.png",
+      "32": "folder/icon.png",
+      "48": "folder/icon.png",
+      "128": "folder/icon.png"
+    }
+  },
+  "icons": {
+    "16": "./images/get_started16.png",
+    "32": "./images/get_started32.png",
+    "48": "./images/get_started48.png",
+    "128": "./images/get_started128.png"
+  }
+}
+```

@@ -1,0 +1,10 @@
+created: 20220102165146969
+creator: AndreiD049
+modified: 20220723180508082
+modifier: AndreiD049
+tags: Algorithms transferred
+title: Binary search
+type: text/vnd.tiddlywiki
+
+Binary search is performed on sorted collections and has a complexity of `O(log n)`.
+It is part of `Divide and Conquer` algorithms and the key target in each step is to make the solution domain smaller, by eliminating portions that don't satisfy the requirements.

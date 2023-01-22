@@ -1,0 +1,17 @@
+created: 20220109140747418
+creator: AndreiD049
+modified: 20220724142408831
+modifier: AndreiD049
+tags: Rust transferred
+title: Rust statement vs expression
+type: text/vnd.tiddlywiki
+
+[[Rust]] is an expression based language.
+
+!!! Differences:
+
+* Statement do not have a return value (ex `let a = 5;` is a statement)
+* Expressions have a return type (ex `6 + 5` is a expression, a function call is an expression)
+* Expressions can be part of a statement (`let a = 6 + 5`, here `6 + 5` is an expression which is part of a statement)
+
+Good way to think about it. Statements are complete, so they should have some finishing symbol at the end (in our case the semicolon `;`)

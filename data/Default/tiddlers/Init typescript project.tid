@@ -1,0 +1,11 @@
+created: 20220102120410412
+creator: AndreiD049
+modified: 20220724145001475
+modifier: AndreiD049
+tags: Typescript transferred
+title: Init typescript project
+type: text/vnd.tiddlywiki
+
+In order to initialize a new typescript project, run `tsc --init`
+This will generate a default [[tsconfig.json|Typescript config file]] file.
+In case you want to add webpack with typescript, see [[Add typescript to webpack]]

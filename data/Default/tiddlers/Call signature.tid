@@ -1,0 +1,21 @@
+created: 20220102125641164
+creator: AndreiD049
+modified: 20220723181327667
+modifier: AndreiD049
+tags: Typescript transferred
+title: Call signature
+type: text/vnd.tiddlywiki
+
+If you want to have a callable object type with some properties in [[Typescript]], you need a `call sugnature`
+
+```ts
+type CallableWithProps = {
+    property: string;
+    (name: string): void;
+}
+
+function doSomething(fn: CallableWithProps) {
+   console.log(fn.property);
+   fn("test");
+}
+```

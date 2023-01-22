@@ -1,0 +1,15 @@
+created: 20211228211009056
+creator: AndreiD049
+modified: 20220724165003866
+modifier: AndreiD049
+tags: transferred
+title: Pattern is just a pointer not a final solution
+type: text/vnd.tiddlywiki
+
+Accoring to [[the book|Patterns of enterprise applications architecture]], patterns are 'half-baked'.
+
+Patterns cannot be applied blindly to your particular cases, as they always need to be adapted to a concrete situation. This is because the pattern is describing only ''the core'' solution (or how one should think about the solution). Implementing this solution is a task that should be done.
+
+<<<
+Every pattern is incomplete, and you have the responsibility, and the fun, to adapt it to your project
+<<< [[Patterns of enterprise applications architecture]]

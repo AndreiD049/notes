@@ -1,0 +1,61 @@
+created: 20220102165936278
+creator: AndreiD049
+modified: 20220723181057438
+modifier: AndreiD049
+tags: Algorithms transferred
+title: Binary search in rotated sorted array
+type: text/vnd.tiddlywiki
+
+Source: https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+```text
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+
+You must write an algorithm with O(log n) runtime complexity.
+```
+
+!! Solution
+
+Again, we see the array is sorted and that we need to solve the problem in `O(log n)` time.
+This almost always means binary-search, so we need to have a left, right, and middle pointer.
+The key concept to understand, when we take a mid pointer, which portion is sorted relative to this pointer, left or right?
+
+[img[2021-11-26-14-26-50.png]]
+
+This is easy to check if we know what is the leftmost value of the array (and we know it). If `left <= mid` then left part is sorted, else the right part is sorted.
+Now that we know which part is sorted, we can check if our `target` is within that sorted part. If it is, then discard the other portion, and vice versa.
+
+[img[2021-11-26-14-30-48.png]]
+
+In above example, target was not in our sorted (left) part, so we just discarded it and continue the search in the remaining portion.
+
+```python
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                return mid;
+           # Is the left part sorted?
+            if nums[left] <= nums[mid]:
+                # Left part is sorted
+                if nums[left] <= target < nums[mid]:
+                    # search the left part
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            else:
+                # Right part is sorted
+                if nums[mid] < target <= nums[right]:
+                    # search right
+                    left = mid + 1
+                else:
+                    right = mid - 1
+        return -1
+```
