@@ -21,7 +21,7 @@ Write-Output $config.syncInterval
 
 if ($config.sync) {
     Start-Job -ScriptBlock {
-        powershell.exe -File $using:sync_script -Interval $using:config.syncInterval -Name $using:config.remoteName -Branch $using:config.remoteBranch;
+        powershell.exe -File $using:sync_script -Name $using:config.remoteName -Branch $using:config.remoteBranch;
     }
 }
 & $npx_executable tiddlywiki $wiki_path --listen port=$Port
