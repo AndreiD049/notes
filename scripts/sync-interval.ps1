@@ -13,7 +13,7 @@ catch {
 if ($git_installed) {
     do {
         Write-Output "Start-sleep"
-        & powershell -File ./scripts/sync.ps1
+        powershell -File ./scripts/sync.ps1
         Start-Sleep -Seconds 100
     } until ($infinity)
 } else {
