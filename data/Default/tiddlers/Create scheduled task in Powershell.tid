@@ -1,0 +1,15 @@
+created: 20230127081607563
+modified: 20230127081801898
+tags: Windows Recipe
+title: Create scheduled task in Powershell
+type: text/vnd.tiddlywiki
+
+See below example how to create a windows scheduled task using powershell
+
+```shell
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-windowstyle hidden -file "SomeScript.ps1""
+$trigger = New-ScheduledTaskTrigger -Once -At 00am -RepetitionDuration (New-TimeSpan -Days (360*20)) -RepetitionInterval (New-TimeSpan -Minutes 5)
+Register-ScheduledTask -TaskName "Some task name" -TaskPath "Folder" -Action $action -Trigger $trigger -Settings $settings -Description @"
+Run every 5 minutes. Do some automation task.
+"@
+```

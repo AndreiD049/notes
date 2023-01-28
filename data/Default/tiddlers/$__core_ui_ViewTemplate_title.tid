@@ -1,6 +1,7 @@
 caption: TiddlyWiki default tiddler title position
 created: 20200418121129515
-modified: 20200808150252093
+dummy: yes
+modified: 20230128142950828
 tags: $:/giffmex/stroll $:/giffmex/titleview
 title: $:/core/ui/ViewTemplate/title
 type: text/vnd.tiddlywiki
