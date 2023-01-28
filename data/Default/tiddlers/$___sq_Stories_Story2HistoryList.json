@@ -646,5 +646,16 @@
             "bottom": 102.484375,
             "height": 39.484375
         }
+    },
+    {
+        "title": "GettingStarted",
+        "fromPageRect": {
+            "top": 63,
+            "left": 1106.5625,
+            "width": 32.890625,
+            "right": 1139.453125,
+            "bottom": 102.484375,
+            "height": 39.484375
+        }
     }
 ]
