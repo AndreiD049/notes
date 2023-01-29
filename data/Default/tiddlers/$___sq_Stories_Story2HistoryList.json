@@ -637,24 +637,24 @@
         "title": "$:/plugins/sq/Stories/changelog"
     },
     {
-        "title": "Computer systems: a programmer's perspective",
+        "title": "GettingStarted",
         "fromPageRect": {
-            "top": 442.4375,
-            "left": 1091.5625,
+            "top": 64,
+            "left": 1093.9375,
             "width": 32.890625,
-            "right": 1124.453125,
-            "bottom": 481.921875,
+            "right": 1126.828125,
+            "bottom": 103.484375,
             "height": 39.484375
         }
     },
     {
-        "title": "GettingStarted",
+        "title": "Computer systems: a programmer's perspective",
         "fromPageRect": {
-            "top": 562.4375,
-            "left": 1091.5625,
+            "top": 810.515625,
+            "left": 342.4375,
             "width": 32.890625,
-            "right": 1124.453125,
-            "bottom": 601.921875,
+            "right": 375.328125,
+            "bottom": 850,
             "height": 39.484375
         }
     }
