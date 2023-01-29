@@ -657,5 +657,25 @@
             "bottom": 850,
             "height": 39.484375
         }
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/ControlPanel",
+        "fromPageRect": {
+            "top": 513.390625,
+            "left": 802,
+            "width": 101.953125,
+            "right": 903.953125,
+            "bottom": 533.390625,
+            "height": 20
+        }
     }
 ]
