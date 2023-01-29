@@ -1,0 +1,14 @@
+created: 20230129112814672
+done: false
+draft.of: Computer organization and design
+draft.title: Computer organization and design
+modified: 20230129113000768
+tags: Book CurrentlyReading
+title: Draft of 'Computer organization and design'
+type: text/vnd.tiddlywiki
+
+@@display:flex;justify-content: center;
+	<$img[9780128201091.jpg]]
+@@
+
+<$macrocall $name="toc" tag={{!!title}} />

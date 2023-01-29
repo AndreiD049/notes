@@ -1,12 +1,12 @@
-created: 20230128194142876
+created: 20230129112814672
 done: false
-modified: 20230129112706631
+modified: 20230129112918588
 tags: Book CurrentlyReading
-title: Computer systems: a programmer's perspective
+title: Computer organization and design
 type: text/vnd.tiddlywiki
 
 @@display:flex;justify-content: center;
-	[img[51HMCKK3JWL._AC_SY1000_-min.jpg]]
+	[img[9780128201091.jpg]]
 @@
 
 <$macrocall $name="toc" tag={{!!title}} />
