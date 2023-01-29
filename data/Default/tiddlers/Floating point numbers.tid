@@ -1,0 +1,23 @@
+created: 20230129105553650
+modified: 20230129110913315
+tags: [[Computer systems: a programmer's perspective]]
+title: Floating point numbers
+type: text/vnd.tiddlywiki
+
+!! Definition
+
+Floating point numbers are represented in modern systems using the [[IEEE 754|https://en.wikipedia.org/wiki/IEEE_754]] standard.
+
+!! Representation
+
+Most common formats of floating point numbers today are ''//single//'' and ''//double//'' precision. (32 and 64-bit respectively)
+
+[img[floating-point-formats.png]]
+
+<small style="color: lightgray">//Computer sytems: a programmer's perspective. p137//</small>
+
+!! Examples
+
+Below are some example values for 8-bit floating point format.
+
+[img[floating-point-examples.png]]

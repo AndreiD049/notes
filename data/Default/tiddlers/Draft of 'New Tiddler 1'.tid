@@ -1,15 +1,7 @@
-created: 20230129105553650
+created: 20230129110957706
 draft.of: New Tiddler 1
-draft.title: Floating point numbers
-modified: 20230129105911968
-tags: [[Computer systems: a programmer's perspective]]
+draft.title: Co
+modified: 20230129111002590
+tags: 
 title: Draft of 'New Tiddler 1'
 type: text/vnd.tiddlywiki
-
-!! Definition
-
-Floating point numbers are represented in modern systems using the [[IEEE 754|https://en.wikipedia.org/wiki/IEEE_754]] standard.
-
-!! Representation
-
-Most common formats of floating point numbers today are //single// and //double// precision. ()
