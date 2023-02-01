@@ -639,12 +639,63 @@
     {
         "title": "GettingStarted",
         "fromPageRect": {
-            "top": 103,
-            "left": 1344.890625,
-            "width": 28,
-            "right": 1372.890625,
-            "bottom": 136.59375,
-            "height": 33.59375
+            "top": 64,
+            "left": 1093.9375,
+            "width": 32.890625,
+            "right": 1126.828125,
+            "bottom": 103.484375,
+            "height": 39.484375
+        }
+    },
+    {
+        "title": "Computer systems: a programmer's perspective",
+        "fromPageRect": {
+            "top": 810.515625,
+            "left": 342.4375,
+            "width": 32.890625,
+            "right": 375.328125,
+            "bottom": 850,
+            "height": 39.484375
+        }
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "$:/ControlPanel",
+        "fromPageRect": {
+            "top": 513.390625,
+            "left": 802,
+            "width": 101.953125,
+            "right": 903.953125,
+            "bottom": 533.390625,
+            "height": 20
+        }
+    },
+    {
+        "title": "$:/AdvancedSearch"
+    },
+    {
+        "title": "Draft of '$:/ControlPanel'"
+    },
+    {
+        "title": "$:/ControlPanel"
+    },
+    {
+        "title": "$:/AdvancedSearch",
+        "fromPageRect": {
+            "top": 694.40625,
+            "left": 991.4375,
+            "width": 45,
+            "right": 1036.4375,
+            "bottom": 713.15625,
+            "height": 18.75
         }
     }
 ]

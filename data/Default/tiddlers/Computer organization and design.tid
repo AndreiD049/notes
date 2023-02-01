@@ -1,0 +1,12 @@
+created: 20230129112814672
+done: false
+modified: 20230129113052744
+tags: Book CurrentlyReading
+title: Computer organization and design
+type: text/vnd.tiddlywiki
+
+@@display:flex;justify-content: center;
+	<$image source="9780128201091.jpg" width="350px" />
+@@
+
+<$macrocall $name="toc" tag={{!!title}} />

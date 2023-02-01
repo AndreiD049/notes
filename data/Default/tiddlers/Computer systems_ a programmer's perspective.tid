@@ -1,0 +1,12 @@
+created: 20230128194142876
+done: false
+modified: 20230129112706631
+tags: Book CurrentlyReading
+title: Computer systems: a programmer's perspective
+type: text/vnd.tiddlywiki
+
+@@display:flex;justify-content: center;
+	[img[51HMCKK3JWL._AC_SY1000_-min.jpg]]
+@@
+
+<$macrocall $name="toc" tag={{!!title}} />
