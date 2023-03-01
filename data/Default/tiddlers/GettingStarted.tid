@@ -1,7 +1,7 @@
 caption: Step 1<br>Syncing
 created: 20211228182512795
 creator: AndreiD049
-modified: 20230214191539351
+modified: 20230301103900941
 modifier: AndreiD049
 tags: $:/tags/GettingStarted
 title: GettingStarted
@@ -11,5 +11,6 @@ type: text/vnd.tiddlywiki
 
 * https://12factor.net
 * https://github.com/metarhia/Manifesto/blob/master/RU/Technology.md
+* https://cs3110.github.io/textbook/cover.html
 
 Before writing any notes, check [[Meta: Note naming convention]]
